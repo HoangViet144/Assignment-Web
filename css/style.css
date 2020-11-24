@@ -207,3 +207,69 @@
 	padding: 10%;
 	padding-top: 15%;
 }
+#section4 .row .col-sm .row {
+	padding: 10%;
+	padding-bottom: 0%;
+}
+#section4 .row .col-sm .row .col-sm {
+	padding-left: 0%;
+}
+#section4 .row .col-sm .row .col-sm .header {
+	font-weight: bold;
+}
+#section4 .row .col-sm .row .col-sm .content {
+	color: gray;
+}
+#section4 .row .col-sm .row .col-sm .link a {
+	text-decoration: none;
+	color: #008060;
+	font-weight: bold;
+	transition: 300ms ease;
+}
+#section4 .row .col-sm .row .col-sm .link a:hover {
+	margin-right: 10px;
+}
+#section5 {
+	margin-top: 7%;
+}
+#section5 .row p,
+#section5 .row button {
+	margin: 1% auto;
+}
+#section5 .row button {
+	background-color: #008060;
+	padding: 1% 2%;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+	transition: 300ms ease;
+	transition-property: background-color, box-shadow, color;
+	border-radius: 4px;
+}
+#section5 .row button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+#section5 .row .header {
+	max-width: 70%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 600;
+}
+#section5 .row .content {
+	color: gray;
+	text-align: center;
+	max-width: 90%;
+}
+#section5 .row a {
+	color: #004d3a;
+	font-weight: 700;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: 5%;
+}
+#section5 .row a:hover {
+	text-shadow: 1px 1px gray;
+	transition: 300ms ease;
+}
