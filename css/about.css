@@ -1,0 +1,34 @@
+.page-container{
+    max-width: 1600px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+}
+#Content-wrapper{
+    display: flow-root;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+*,*::before,*::after{
+    /* box-sizing: border-box; Giữ nguyên size khi padding và border đổi */
+    box-sizing: border-box;
+}
+
+.section{
+    padding: 4em 0;
+}
+
+.about-us{
+    display: flex;
+    align-items: center;
+    background-color: rgb(243, 252, 244);
+}
+
+@media screen and (min-width:47em) {
+  .section{
+    padding: 6em 0;
+  }
+}
