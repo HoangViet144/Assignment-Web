@@ -6,25 +6,27 @@
 	left: 0;
 	width: 100%;
 	z-index: 1000;
-	max-height: 8rem;
-	padding: 0px 5%;
-	padding-left: 5%;
+	max-height: 40%;
+	padding: 0% 5%;
 }
 .navbar {
 	width: 100%;
 }
 #logo {
-	max-height: 2.5rem;
+	max-height: 40px;
 	margin: auto 0;
 }
 #section1 {
 	position: relative;
-	margin: 10% 0;
+	margin: 6% 0;
+	margin-bottom: 0%;
 }
 #company-name {
 	padding-left: 4%;
-	font-size: 2em;
+	font-size: 1.3em;
 	color: black;
+	font-weight: bold;
+	font-style: italic;
 }
 
 .sidebar {
@@ -58,6 +60,8 @@
 	color: #fff;
 	background-color: #008060;
 	font-weight: 700;
+	transition: 150ms ease;
+	transition-property: background-color, box-shadow, color;
 	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
 }
 #header .header-navbar #header-menu ul li .last-item:hover {
@@ -78,8 +82,128 @@
 #section1 .row {
 	margin: auto;
 }
-#section1 .row .col-sm .row p {
-	font-size: 3em;
+#section1 .row .col-sm #up {
+	font-size: 2em;
 	color: #004c3f;
+	font-weight: 900;
+	padding: 10%;
+	padding-top: 15%;
+	padding-bottom: 5%;
+}
+
+#section1 .row .col-sm {
+	padding-right: 0%;
+}
+#section1 .row .col-sm #down {
+	padding-left: 10%;
+}
+#section1 .row .col-sm .row button {
+	background-color: #008060;
+	padding: 2% 5%;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+	transition: 150ms ease;
+	transition-property: background-color, box-shadow, color;
+	border-radius: 4px;
+}
+#section1 .row .col-sm .row button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
+}
+#section2 {
+	background-color: #b9f0e9;
+	padding: 6%;
+	padding-top: 8%;
+}
+#section2 #header_section2 h2 {
+	font-size: 2.5em;
+	margin-bottom: 1%;
+}
+#section2 #header_section2 a {
+	color: black;
+	transition: 150ms ease;
+	font-weight: bold;
+}
+#section2 #header_section2 a:hover {
+	margin-right: 5px;
+	text-decoration: none;
+}
+#section2 #items_section2 {
+	margin-top: 5%;
+}
+#section2 #items_section2 .row .col-sm p {
 	font-weight: 600;
+	margin-top: 5%;
+}
+#section2 #header2_section2 {
+	margin-top: 10%;
+	margin-bottom: 5%;
+	font-size: 2.5em;
+}
+#section2 #items2_section2 .row .col-sm .header-card {
+	font-weight: bold;
+	margin-top: 7%;
+}
+#section3 {
+	background-color: white;
+}
+#section3 .row p {
+	margin: auto;
+}
+#header-section3 {
+	margin-top: 10%;
+	margin-bottom: 2%;
+	font-size: 3em;
+}
+#detail-header-section3 {
+	max-width: 40%;
+	margin: auto;
+	text-align: center;
+	color: gray;
+	margin-bottom: 10%;
+}
+
+#section3 .row .col-sm .header {
+	font-size: 2em;
+	margin-top: 5%;
+	margin-bottom: 2%;
+	padding-left: 5%;
+}
+#section3 .row .col-sm .content {
+	padding-right: 40%;
+	padding-left: 5%;
+}
+#img4 {
+	margin-left: 5%;
+	box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.2);
+}
+#section3 .row .col-sm .link {
+	margin-top: 2%;
+	padding-left: 5%;
+}
+#section3 .row .col-sm .link a {
+	color: #008060;
+	font-weight: bold;
+	transition: 300ms ease;
+}
+#section3 .row .col-sm .link a:hover {
+	text-decoration: none;
+	margin-right: 5px;
+}
+#section3 .row .col-sm #empower {
+	margin-top: 15%;
+}
+#section4 {
+	margin-top: 10%;
+	background-color: #fbf7ed;
+}
+#section4 .row {
+	margin: auto;
+}
+#section4 .row .col-sm #header-section4 {
+	font-size: 2.5em;
+	font-weight: 500;
+	padding: 10%;
+	padding-top: 15%;
 }
