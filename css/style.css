@@ -1,7 +1,85 @@
-.header {
+#header {
+	background-color: white;
+	border-bottom: 1px solid #e8e9eb;
 	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	max-height: 8rem;
+	padding: 0px 5%;
+	padding-left: 5%;
 }
-.banner {
+.navbar {
+	width: 100%;
+}
+#logo {
+	max-height: 2.5rem;
+	margin: auto 0;
+}
+#section1 {
 	position: relative;
-	padding: 5% 0;
+	margin: 10% 0;
+}
+#company-name {
+	padding-left: 4%;
+	font-size: 2em;
+	color: black;
+}
+
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+#background {
+	opacity: 0.2;
+	background-color: black;
+	width: 0%;
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	overflow-x: hidden;
+}
+#header .header-navbar #header-menu ul li {
+	margin: 0 10px;
+}
+#header .header-navbar #header-menu ul li .last-item {
+	color: #fff;
+	background-color: #008060;
+	font-weight: 700;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li .last-item:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar {
+	display: flex !important;
+	justify-content: space-between;
+}
+#header .header-navbar .navbar-brand {
+	display: flex;
+	flex-grow: 0 !important;
+}
+#header .header-navbar .navbar-collapse {
+	flex-grow: 0 !important;
+}
+#section1 .row {
+	margin: auto;
+}
+#section1 .row .col-sm .row p {
+	font-size: 3em;
+	color: #004c3f;
+	font-weight: 600;
 }
