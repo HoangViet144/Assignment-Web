@@ -12,6 +12,13 @@
     position: relative;
 }
 
+#Header{
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: sandybrown;
+}
+
 *,*::before,*::after{
     /* box-sizing: border-box; Giữ nguyên size khi padding và border đổi */
     box-sizing: border-box;
@@ -25,6 +32,10 @@
     display: flex;
     align-items: center;
     background-color: rgb(243, 252, 244);
+}
+#section1 #section1-content{
+    background-color: sa lmon;
+    width: 100%;
 }
 
 @media screen and (min-width:47em) {
