@@ -1,9 +1,15 @@
+#container {
+	max-width: 1600px;
+	margin: auto;
+}
+
 #header {
+	max-width: 1600px;
 	background-color: white;
 	border-bottom: 1px solid #e8e9eb;
 	position: fixed;
-	top: 0;
-	left: 0;
+	margin-top: 0;
+	margin-left: auto;
 	width: 100%;
 	z-index: 1000;
 	max-height: 40%;
@@ -18,8 +24,8 @@
 }
 #section1 {
 	position: relative;
-	margin: 6% 0;
-	margin-bottom: 0%;
+	padding: 5.1% 0;
+	padding-bottom: 0%;
 }
 #company-name {
 	padding-left: 4%;
@@ -36,7 +42,7 @@
 	z-index: 1;
 	top: 0;
 	right: 0;
-	background-color: #111;
+	background-color: white;
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -67,6 +73,9 @@
 #header .header-navbar #header-menu ul li .last-item:hover {
 	background-color: #004d3a;
 	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li a {
+	font-size: 1.3vw;
 }
 #header .header-navbar {
 	display: flex !important;
@@ -272,4 +281,7 @@
 #section5 .row a:hover {
 	text-shadow: 1px 1px gray;
 	transition: 300ms ease;
+}
+* {
+	box-sizing: border-box;
 }
