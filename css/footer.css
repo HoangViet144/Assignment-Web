@@ -1,0 +1,88 @@
+div.my-footer>nav.navbar.navbar-expand-lg,div.my-footer>div.row{
+	background-color: #002e25;
+	text-decoration: none;
+	font-family: 'Thasadith', sans-serif;
+}
+
+li.nav-item>a.nav-link{
+	background-color: #002e25;
+	text-decoration: none;
+	color: white;
+	font-family: 'Thasadith', sans-serif;
+	font-weight: bolder;
+
+}
+a.nav-link:hover{
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	color: white;
+	font-family: 'Thasadith', sans-serif;
+
+}
+div.row>a{
+	color: #b6babf;
+	text-decoration: none;
+	font-family: 'Thasadith', sans-serif;
+}
+div#my-footer-bottom{
+	margin-top:10px;
+	border-top: 1px solid rgba(210,213,217,0.1);
+	margin-left: 0;
+}
+/*MY ICON FOOTER  */
+
+a.fa.fa-facebook,a.fa.fa-twitter,a.fa.fa-youtube,a.fa.fa-instagram,a.fa.fa-linkedin,a.fa.fa-pinterest{
+	padding: 6px 2px 0px 2px;
+    font-size: 15px;
+    width: 18px;
+    text-align: center;
+    text-decoration: none;
+	border-radius: 50%;
+	background-color: white;
+	color:#002e25;
+	margin-left: 5px;
+
+}
+div.col.align-self-end>a{
+	color:white;
+	text-decoration: none;
+	padding-right: 2.5em;
+	font-weight: lighter;
+}
+div.col-4.col-md-4>div.row.my-title-col>a{
+	color: white;
+}
+/* check already */
+div.row>div.col-4.col-md-4>a.my-title-col{
+	color: white;
+	font-weight: bolder;
+}
+div.row>div.col-4.col-md-4>a{
+	color:#b6babf;
+}
+div.col.align-self-end>div.row>div.col-12.col-md-4 a
+,div.my-footer-bottom-mobile>div.row>div.col-12.col-md-4>a{
+	color: white !important;
+	text-decoration: none;
+}
+#my-footer-top-mobile{
+	display: none;
+}
+@media (max-width: 1200px) {  
+	#my-footer-top-desk{
+		display: none;
+	}
+	#my-footer-top-mobile{
+		display: block;
+
+	}
+	#my-footer-top-mobile>div.row>div.col-12.col-md-4 a{
+		color:white!important;
+		display: block;
+		text-decoration: none;
+		font-weight: bolder;
+	}
+}
+*{
+    text-align: center;
+}
