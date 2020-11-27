@@ -1,99 +1,94 @@
-
-
-.mynarbar{
-  background-color: #002e25;
+p.display-4{
+	font-size: 2em;
 }
-#my-trial-button{
-background-color: #008060;
-border-color: #008060;
-border-style: solid;
-width:170px;
+a.btn.btn-primary.btn-lg{
+	background-color: #008060!important;
+	border: #008060 !important;
+	box-shadow:none !important;
 
 }
-#my-trial-button:hover{
-background-color: #002e25;
-border: 2px solid #008060;
-width:170px;
+*{
+	text-align: center;
 }
-a{
-color: #cccdd7;
-font-family:'Roboto', sans-serif;
-widows: 100px;
-font-size: 15px;
-font-weight: 500;
-letter-spacing: 0.02em
+a.btn.btn-primary.btn-lg:hover{
+	background-color: #002e25!important;
+	box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15)!important;
 }
-div{
-  color: #cccdd7;
+a.btn.btn-primary.btn-lg:focus{
+	background-color: #002e25!important;
+	box-shadow: 0px 0px 2px 2px #008060!important;
+
 }
-.dropdown-menu>.dropdown-item{
+div.jumbotron{
+	background-color: white;
+	text-align: center;
+}
+
+tr:hover{
+    background-color:#f0f1f2;
+    /* border:  */
+    }
+
+    div > table, div>button{
+    display:none;
+    }
+    #my-table-shopify{
+    display:none;
+    }
+    @media (max-width: 991.98px) { 
+    table{
+        display:none;
+        }
+         #my-table-shopify,div>button{
+    display:block;
+    }
+    }
+
+button{
+width:100%;
+border: 1px solid #d2d5d9;
+background-color: white;
 color: #6b7177;
-font-family:'Roboto', sans-serif;
-width:250px;
-font-size: 1.0625em;
-font-weight: 500;
-letter-spacing: 0.02em;
-}
-li{
-  width: 90px;
-}
-.mylogo{
-width: 30px;
-}
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-  
-}
-
-.overlay-content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-#my-first-title{
-  font-weight: bold;
-  font-size:20px;
-  color:black;
-  padding: 50px 0;
 
 }
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+button:focus{
+color:black;
+outline:0;
+background-color: #f0f1f2;
+
+}
+table th,table td{
+	border:1px solid #d2d5d9;
 }
 
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+table.table{
+	width:60%;
+	margin-left:20%;
 }
 
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+
+
+tr.my-title{
+	background-color:#f0f1f2 ;
 }
-
-@media screen and (max-width:992px) {
-
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
+th span{
+	font-weight: lighter;
+}
+span.b {
+	vertical-align: text-top;
   }
-}
+  
+  
+  span.c {
+	vertical-align: baseline;
+  }
+  
+  span.sub {
+	vertical-align: sub;
+  }
+  td>span{
+	  font-size: 3em;
+  }
+  span>span{
+	  font-size: 1em;
+  }
