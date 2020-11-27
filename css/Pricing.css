@@ -19,76 +19,160 @@ a.btn.btn-primary.btn-lg:focus{
 	box-shadow: 0px 0px 2px 2px #008060!important;
 
 }
-div.jumbotron{
+div.jumbotron.first-jumbotron{
 	background-color: white;
 	text-align: center;
 }
-
+table{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 tr:hover{
     background-color:#f0f1f2;
-    /* border:  */
+}
+
+#my-table-shopify,#my-table-advance,#my-table-basic,div>button{
+	display: none;
+}
+
+    @media (max-width: 1200px) { 
+
+        #my-table-respondsive{
+			display:none;
+        }
+        #my-table-shopify{
+			display:block;
+			/* margin-left: 50vw; */
+		}
+		#my-table-advance,#my-table-basic,#my-table-shopify{
+			margin-top: 20vw;
+			margin-left: 5vw;
+			width:90vw;
+			/* margin-left:2%; */
+			border:1px solid #d2d5d9;
+		}
+		#my-table-advance,#my-table-basic{
+			display: none;
+
+		}
+
+		div>button{
+			display: block;
+			margin-left: 5vw;
+		}
+		h1{
+			font-size: 2em !important;
+		}
+		p.display-4{
+			font-size: 1.5em;
+		
+		}
     }
 
-    div > table, div>button{
-    display:none;
-    }
-    #my-table-shopify{
-    display:none;
-    }
-    @media (max-width: 991.98px) { 
-    table{
-        display:none;
-        }
-         #my-table-shopify,div>button{
-    display:block;
-    }
-    }
+      
 
 button{
-width:100%;
-border: 1px solid #d2d5d9;
-background-color: white;
-color: #6b7177;
-
+	width:100%;
+	border: 1px solid #d2d5d9;
+	background-color: white;
+	color: #6b7177;
+	height: 3em;
 }
 button:focus{
-color:black;
-outline:0;
-background-color: #f0f1f2;
+	color:black;
+	background-color: #f0f1f2;
+	font-weight: bolder;
+	outline: none!important;
 
 }
 table th,table td{
 	border:1px solid #d2d5d9;
+	color: #212326;
 }
 
 table.table{
-	width:60%;
-	margin-left:20%;
+	width:60vw;
+  	margin-left:20%;
+	border:1px solid #d2d5d9;
 }
-
-
 
 tr.my-title{
 	background-color:#f0f1f2 ;
 }
+
+tr.my-second-title th,tr.my-second-title td{
+  background-color:#f0f1f2 ;
+  border: none;
+  font-weight: bold;
+  text-align: left;
+}
 th span{
 	font-weight: lighter;
 }
-span.b {
-	vertical-align: text-top;
-  }
+
+span.sub-align {
+  vertical-align: sub;
+}
   
-  
-  span.c {
-	vertical-align: baseline;
-  }
-  
-  span.sub {
-	vertical-align: sub;
-  }
-  td>span{
-	  font-size: 3em;
-  }
-  span>span{
-	  font-size: 1em;
-  }
+.strong-text{
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.my-ok-icon{
+    font-size: 1.5em;
+    font-weight: 600;
+    color:green
+}
+a.btn.btn-dark{
+	width:10em; 
+	font-size:1em;
+	height:5%;
+}
+
+div.col-sm-6{
+	line-height: 2em;
+}
+/* #button1,#button2,#button3{
+	height: 3em;
+}
+
+#button1,#button2,#button3:focus{
+	background-color: d2d5d9;
+	font-weight: bolder;
+} */
+div.btn-group-vertical{
+	width:90%;
+}
+div.container-fluid{
+	background-color: #002e25;
+	margin-top:-2.5%;
+}
+
+div.my-footer>nav.navbar.navbar-expand-lg,div.my-footer>div.row{
+	background-color: #002e25;
+	text-decoration: none;
+	font-family: 'Thasadith', sans-serif;
+}
+
+li.nav-item>a.nav-link{
+	background-color: #002e25;
+	text-decoration: none;
+	color: white;
+	font-family: 'Thasadith', sans-serif;
+}
+a.nav-link:hover{
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	color: white;
+	font-family: 'Thasadith', sans-serif;
+
+}
+div.row>a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Thasadith', sans-serif;
+
+}
+div#my-footer-bottom{
+	border-top: 1px solid rgba(210,213,217,0.1);
+}
+/*  */
