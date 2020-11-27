@@ -2,7 +2,7 @@
 	max-width: 1600px;
 	margin: auto;
 }
-
+/*header*/
 #header {
 	max-width: 1600px;
 	background-color: white;
@@ -22,11 +22,7 @@
 	max-height: 40px;
 	margin: auto 0;
 }
-#section1 {
-	position: relative;
-	padding: 5.1% 0;
-	padding-bottom: 0%;
-}
+
 #company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
@@ -138,6 +134,12 @@
 }
 #header .header-navbar .navbar-collapse {
 	flex-grow: 0 !important;
+}
+/*end header*/
+#section1 {
+	position: relative;
+	padding: 5.1% 0;
+	padding-bottom: 0%;
 }
 #section1 .row {
 	margin: auto;
@@ -424,4 +426,96 @@
 	#section5 .row .header {
 		font-size: 1.5em;
 	}
+}
+
+/* footer css*/
+#footer div.my-footer > nav.navbar.navbar-expand-lg,
+div.my-footer > div.row {
+	background-color: #002e25;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+
+#footer li.nav-item > a.nav-link {
+	background-color: #002e25;
+	text-decoration: none;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+	font-weight: bolder;
+}
+#footer a.nav-link:hover {
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div.row > a {
+	color: #b6babf;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div#my-footer-bottom {
+	margin-top: 10px;
+	border-top: 1px solid rgba(210, 213, 217, 0.1);
+	margin-left: 0;
+}
+/*MY ICON FOOTER  */
+
+#footer a.fa.fa-facebook,
+#footer a.fa.fa-twitter,
+#footer a.fa.fa-youtube,
+#footer a.fa.fa-instagram,
+#footer a.fa.fa-linkedin,
+#footer a.fa.fa-pinterest {
+	padding: 6px 2px 0px 2px;
+	font-size: 15px;
+	width: 25px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: white;
+	color: #002e25;
+	margin-left: 5px;
+}
+#footer div.col.align-self-end > a {
+	color: white;
+	text-decoration: none;
+	padding-right: 2.5em;
+	font-weight: lighter;
+}
+#footer div.col-4.col-md-4 > div.row.my-title-col > a {
+	color: white;
+}
+/* check already */
+#footer div.row > div.col-4.col-md-4 > a.my-title-col {
+	color: white;
+	font-weight: bolder;
+}
+#footer div.row > div.col-4.col-md-4 > a {
+	color: #b6babf;
+}
+#footer div.col.align-self-end > div.row > div.col-12.col-md-4 a,
+#footer div.my-footer-bottom-mobile > div.row > div.col-12.col-md-4 > a {
+	color: white !important;
+	text-decoration: none;
+}
+#footer #my-footer-top-mobile {
+	display: none;
+}
+@media (max-width: 1200px) {
+	#footer #my-footer-top-desk {
+		display: none;
+	}
+	#footer #my-footer-top-mobile {
+		display: block;
+	}
+	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
+		color: white !important;
+		display: block;
+		text-decoration: none;
+		font-weight: bolder;
+	}
+}
+#footer * {
+	text-align: center;
 }
