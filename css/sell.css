@@ -1,0 +1,192 @@
+.intro {
+    background-color: #c3f0db;
+    margin-bottom: 300px;
+    height: 900px;
+}
+.intro_text {
+    padding-left: 100px;
+    padding-top: 200px;
+}
+.sub_head {
+    margin-bottom: 100px;
+}
+a {
+    color:green;
+}
+a:hover {
+    text-decoration: none;
+    color:green;
+}
+a.col-md-6.choice { 
+    text-decoration: none;
+    color: black;
+    max-width: 250px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+}
+.head_highlight{
+    color: green;
+}
+.head_highlight:hover {
+    text-decoration: underline;
+}
+.intro_image {
+    padding-top: 180px;
+    position: relative;
+}
+.girl {
+    padding-top: 20px;
+    max-width: 40%;
+    position: absolute;
+}
+.tree {
+    max-width: 40%;
+    position: absolute;
+    margin-left: 280px;
+}
+.street{
+    max-width: 40%;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 390px;
+}
+
+
+
+.option {
+    margin: 0px;
+}
+
+img {
+    max-width: 70%;
+    height: auto;
+   
+}
+.online_store {
+    position: relative;
+    margin-left: 300px;
+    background-color: #b9f0e9;
+    margin-bottom: 300px;
+    width: 700px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.online_store_image{
+    position: absolute;
+    max-width: 100%;
+    margin-left: 500px;
+}
+.background_laptop {
+    position: absolute;
+}
+.video {
+    position: absolute;
+    max-width: 48%;
+    margin-top: 180px;
+    margin-left: 52px;
+}
+.point_of_sale{
+    position: relative;
+    margin-left: 200px;
+    
+}
+.point_of_sale_text {
+    position: relative;
+    margin-left: 300px;
+    background-color: #e7f09d;
+    margin-bottom: 300px;
+    padding-left: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.point_of_sale_image{
+    position: absolute;
+}
+
+.sale_girl{
+    position: absolute;
+    max-width: 50%;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.device{
+    max-width: 30%;
+    position: absolute;
+    border-top-right-radius: 25pt;
+    margin-top: 350px;
+    margin-left: 50px;
+}
+.phone {
+    max-width: 30%;
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 270px;
+}
+.buy {
+    position: relative;
+    margin-left: 300px;
+    background-color: #b9f0e9;
+    margin-bottom: 300px;
+    width: 700px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.buy_image{
+    position: absolute;
+    margin-left: 400px;
+}
+.bottle {
+    position: absolute;
+    max-width: 40%;
+    margin-top: 320px;
+}
+.buy_pic {
+    max-width: 130%;
+    margin-left: 120px;
+}
+.code {
+    max-width: 100%;
+    margin-left: 250px;
+}
+.channel{
+    position: relative;
+    margin-left: 200px;
+}
+
+.channel_text {
+    position: relative;
+    margin-left: 300px;
+    background-color: #fdf7f9;
+    margin-bottom: 300px;
+    padding-left: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.channel_image {
+    position: absolute;
+}
+.chat {
+    position: absolute;
+    max-width: 50%;
+    margin-left: 170px;
+    margin-top: 50px;
+}
+.start_sell {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 200px;
+}
+button {
+    background-color: #008060;
+	padding: 2% 5%;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+	transition: 150ms ease;
+	transition-property: background-color, box-shadow, color;
+	border-radius: 4px;
+}
+
+
+
+
