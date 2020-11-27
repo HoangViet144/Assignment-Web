@@ -1,0 +1,86 @@
+body {
+	background: url(../img/loginbg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rebeccapurple;
+	background-position: center center;
+	height: 100vh;
+}
+#login-form {
+	width: 388px;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-left: 15%;
+}
+#logo {
+	max-height: 40px;
+}
+#container #login-form form .row {
+	margin: auto;
+	padding: 80px 40px;
+}
+#container #login-form form .form-group {
+	padding: 0px 40px;
+}
+#container #login-form form .form-group input:focus {
+	border: 1px solid #084c3f;
+	box-shadow: 0 0 10px #084c3f;
+}
+#container #login-form form .form-group button {
+	background-color: #008060;
+	color: white;
+	padding: 5px 20px;
+	width: 100%;
+	font-weight: bold;
+}
+#container #login-form form .form-group button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#container #login-form form .row #company-name {
+	font-weight: bold;
+	font-size: 1.75em;
+	color: black;
+	margin-left: 10px;
+	font-style: italic;
+}
+#container #login-form form .row #company-name:hover {
+	text-decoration: none;
+}
+#container #login-form form #register {
+	padding-top: 20px;
+	padding-bottom: 100px;
+}
+#container #login-form form .form-group a {
+	color: #008060;
+	margin-top: 200px;
+}
+label {
+	font-weight: bold;
+}
+@media only screen and (max-width: 1000px) {
+	#login-form {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media only screen and (max-width: 500px) {
+	#login-form {
+		width: 90%;
+	}
+	#container #login-form form .row {
+		padding: 10% 10%;
+	}
+	#container #login-form form .row {
+		padding-left: 20px;
+	}
+	#container #login-form form .form-group {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#container #login-form form #register {
+		padding-top: 0px;
+		padding-bottom: 10px;
+	}
+}
