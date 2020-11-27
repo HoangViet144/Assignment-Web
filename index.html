@@ -16,11 +16,33 @@
             <div id="background" onclick="closeNav()"></div>
             <div id="header">
                 <div id="mySidebar" class="sidebar">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a>
+                    <div id="sidebarContent">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
+                                <a id="company-name"  href="#">shopify</a>
+                            </div>
+                            <div class="col-sm-1">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a href="#">Bảng giá</a>
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="#">Đăng nhập</a>
+                            </div>
+                            <div class="col-sm-12">
+                                <button > Bắt đầu ngay</button>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a href="#">Về chúng tôi</a>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
 
                 <nav class="header-navbar navbar navbar-expand-md navbar-light">
@@ -76,27 +98,27 @@
                     <h2>Mang công việc kinh doanh của bạn lên thế giới số</h2>
                     <p>Tạo một trang web thương mại điện tử sẽ giúp bạn tìm kiếm khách hàng, tăng doanh thu và theo dõi hoạt động kinh doanh của bạn mỗi ngày</p>
                     <a href="./examples">Xem nhiều ví dụ hơn </a>
-                    <img src="img/arrowright.png" alt="hi" width="2%" />
+                    <img src="img/arrowright.png" alt="hi" width="20px" />
                 </div>
                 <div id="items_section2">
                     <div class="row">
-                        <div class="col-sm">
+                        <div class="col-sm" id="food">
                             <img src="img/index_food.jpg" width="100%" />
                             <p>THỨC ĂN</p>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm" id=#jewelry>
                             <img src="img/index_jewery.jpg" width="100%" />
                             <p>TRANG SỨC</p>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm" id="drink">
                             <img src="img/index_drink.jpg" width="100%" />
                             <p>GIẢI KHÁT</p>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm" id="cosmetic">
                             <img src="img/index_cosmetics.jpg" width="100%" />
                             <p>MỸ PHẨM</p>
                         </div>
-                        <div class="col-sm">
+                        <div class="col-sm" id="garden">
                             <img src="img/index_garden.jpg" width="100%" />
                             <p>CÂY TRỒNG</p>
                         </div>
@@ -135,7 +157,7 @@
                 <div class="row" id="detail-header-section3">
                     <p>Một nền tảng với toàn bộ tính năng hỗ trợ kinh doanh để giúp bạn bắt đầu, điều hành và phát triển công việc của bạn</p>
                 </div>
-                <div class="row">
+                <div class="row" id="row1">
                     <div class="col-sm">
                         <img src="img/index_pic2.PNG" width="100%" alt="pic2" />
                     </div>
@@ -156,7 +178,7 @@
                         <img src="img/index_pic3.png" alt="pic3" width="100%" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="row3">
                     <div class="col-sm">
                         <img src="img/index_pic4.PNG" alt="pic4" width="80%" id="img4" />
                     </div>
