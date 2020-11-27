@@ -1,14 +1,14 @@
 .intro {
     background-color: #c3f0db;
-    margin-bottom: 300px;
-    height: 900px;
+    margin-bottom: 20%;
+    height: auto;
 }
 .intro_text {
-    padding-left: 100px;
-    padding-top: 200px;
+    padding-left: 10%;
+    padding-top: 20%;
 }
 .sub_head {
-    margin-bottom: 100px;
+    margin-bottom: 10%;
 }
 a {
     color:green;
@@ -20,9 +20,9 @@ a:hover {
 a.col-md-6.choice { 
     text-decoration: none;
     color: black;
-    max-width: 250px;
-    margin-bottom: 20px;
-    margin-right: 40px;
+    max-width: 33%;
+    margin-bottom: 5%;
+    margin-right: 5%;
 }
 .head_highlight{
     color: green;
@@ -31,24 +31,24 @@ a.col-md-6.choice {
     text-decoration: underline;
 }
 .intro_image {
-    padding-top: 180px;
+    padding-top: 10%;
     position: relative;
 }
 .girl {
-    padding-top: 20px;
+    padding-top: 2%;
     max-width: 40%;
     position: absolute;
 }
 .tree {
     max-width: 40%;
     position: absolute;
-    margin-left: 280px;
+    margin-left: 38%;
 }
 .street{
     max-width: 40%;
     position: absolute;
-    margin-left: 280px;
-    margin-top: 390px;
+    margin-left: 38%;
+    margin-top: 50%;
 }
 
 
@@ -64,17 +64,17 @@ img {
 }
 .online_store {
     position: relative;
-    margin-left: 300px;
+    margin-left: 15%;
     background-color: #b9f0e9;
-    margin-bottom: 300px;
-    width: 700px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 20%;
+    width: 46%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .online_store_image{
     position: absolute;
     max-width: 100%;
-    margin-left: 500px;
+    margin-left: 65%;
 }
 .background_laptop {
     position: absolute;
@@ -82,22 +82,23 @@ img {
 .video {
     position: absolute;
     max-width: 48%;
-    margin-top: 180px;
-    margin-left: 52px;
+    margin-top: 26%;
+    margin-left: 7.5%;
 }
 .point_of_sale{
     position: relative;
-    margin-left: 200px;
+    margin-left: 15%;
     
 }
 .point_of_sale_text {
+    max-width: auto;
     position: relative;
-    margin-left: 300px;
+    margin-left: 20%;
     background-color: #e7f09d;
-    margin-bottom: 300px;
-    padding-left: 300px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 20%;
+    padding-left: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .point_of_sale_image{
     position: absolute;
@@ -106,61 +107,61 @@ img {
 .sale_girl{
     position: absolute;
     max-width: 50%;
-    margin-left: 100px;
-    margin-top: 100px;
+    margin-left: 20%;
+    margin-top: 15%;
 }
 .device{
     max-width: 30%;
     position: absolute;
     border-top-right-radius: 25pt;
-    margin-top: 350px;
-    margin-left: 50px;
+    margin-top: 60%;
+    margin-left: 8%;
 }
 .phone {
     max-width: 30%;
     position: absolute;
-    margin-top: 450px;
-    margin-left: 270px;
+    margin-top: 70%;
+    margin-left: 42%;
 }
 .buy {
     position: relative;
-    margin-left: 300px;
+    margin-left: 20%;
     background-color: #b9f0e9;
-    margin-bottom: 300px;
-    width: 700px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 20%;
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .buy_image{
     position: absolute;
-    margin-left: 400px;
+    margin-left: 60%;
 }
 .bottle {
     position: absolute;
-    max-width: 40%;
-    margin-top: 320px;
+    max-width: 35%;
+    margin-top: 90%;
 }
 .buy_pic {
-    max-width: 130%;
-    margin-left: 120px;
+    max-width: 125%;
+    margin-left: 40%;
 }
 .code {
     max-width: 100%;
-    margin-left: 250px;
+    margin-left: 65%;
 }
 .channel{
     position: relative;
-    margin-left: 200px;
+    margin-left: 15%;
 }
 
 .channel_text {
     position: relative;
-    margin-left: 300px;
+    margin-left: 30%;
     background-color: #fdf7f9;
-    margin-bottom: 300px;
-    padding-left: 300px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 20%;
+    padding-left: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .channel_image {
     position: absolute;
@@ -168,13 +169,13 @@ img {
 .chat {
     position: absolute;
     max-width: 50%;
-    margin-left: 170px;
-    margin-top: 50px;
+    margin-left: 35%;
+    margin-top: 20%;
 }
 .start_sell {
     margin: auto;
     text-align: center;
-    margin-bottom: 200px;
+    margin-bottom: 20%;
 }
 button {
     background-color: #008060;
@@ -186,7 +187,12 @@ button {
 	transition-property: background-color, box-shadow, color;
 	border-radius: 4px;
 }
+@media only screen and (max-width: 1080px) {
+    
 
+
+
+}
 
 
 
