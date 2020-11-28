@@ -176,6 +176,9 @@
 	background-color: #004d3a;
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.15);
 }
+#section1 img {
+	width: 100%;
+}
 #section2 {
 	background-color: #b9f0e9;
 	padding: 6%;
@@ -210,8 +213,21 @@
 	font-weight: bold;
 	margin-top: 7%;
 }
+#items_section2 img {
+	width: 100%;
+}
+#items2_section2 img {
+	width: 20%;
+}
 #section3 {
 	background-color: white;
+}
+#section3 #row1 img,
+#section3 #row2 img {
+	width: 100%;
+}
+#section3 #row3 img {
+	width: 80%;
 }
 #section3 .row p {
 	margin: auto;
@@ -275,6 +291,9 @@
 	font-weight: 500;
 	padding: 10%;
 	padding-top: 15%;
+}
+#section4 #pic5 {
+	width: 100%;
 }
 #section4 .row .col-sm .row {
 	padding: 10%;
