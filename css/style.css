@@ -18,17 +18,19 @@
 .navbar {
 	width: 100%;
 }
-#logo {
+.logo {
 	max-height: 40px;
 	margin: auto 0;
 }
-
-#company-name {
+.company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
 	font-weight: bold;
 	font-style: italic;
+}
+.company-name:hover {
+	color: black;
 }
 #sidebarContent {
 	padding: 15%;
@@ -54,14 +56,15 @@
 #container #header #mySidebar #sidebarContent .row .col-sm-10 {
 	padding: 0%;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-10 #company-name {
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
 
-#container #header #mySidebar #sidebarContent .row .col-sm-10 #company-name:hover {
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
 	text-decoration: none;
+	color: black;
 }
 #container #header #mySidebar #sidebarContent .row .col-sm-1 a {
 	color: black;

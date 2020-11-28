@@ -26,6 +26,9 @@
 	font-weight: bold;
 	font-style: italic;
 }
+.company-name:hover {
+	color: black;
+}
 #sidebarContent {
 	padding: 15%;
 	padding-top: 5%;
