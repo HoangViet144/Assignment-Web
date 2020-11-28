@@ -132,6 +132,9 @@
 	flex-grow: 0 !important;
 }
 /*end header*/
+.container-fluid #part1 {
+	padding-top: 70px;
+}
 #title1 {
 	font-weight: 700;
 	color: #6b7177;

@@ -25,3 +25,24 @@ $(document).ready(function () {
         $("#" + elt).removeClass('hide');
     });
 })
+var x = document.getElementById("my-table-basic");
+var y = document.getElementById("my-table-shopify");
+var z = document.getElementById("my-table-advance")
+
+function myFunction1() {
+    x.style.display = "block";
+    y.style.display = "none";
+    z.style.display = "none";
+}
+
+function myFunction2() {
+    y.style.display = "block";
+    x.style.display = "none";
+    z.style.display = "none";
+}
+
+function myFunction3() {
+    z.style.display = "block";
+    y.style.display = "none";
+    x.style.display = "none";
+}
