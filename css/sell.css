@@ -3,6 +3,9 @@
     margin-bottom: 20%;
     height: auto;
 }
+.hidden {
+    display: none;
+}
 .intro_text {
     padding-left: 10%;
     padding-top: 20%;
@@ -20,7 +23,7 @@ a:hover {
 a.col-md-6.choice { 
     text-decoration: none;
     color: black;
-    max-width: 33%;
+    max-width: 35%;
     margin-bottom: 5%;
     margin-right: 5%;
 }
@@ -50,7 +53,9 @@ a.col-md-6.choice {
     margin-left: 38%;
     margin-top: 50%;
 }
-
+.detail {
+    margin-bottom: 10%;
+}
 
 
 .option {
@@ -173,9 +178,11 @@ img {
     margin-top: 20%;
 }
 .start_sell {
-    margin: auto;
+    max-width: 31.25em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.875em;
     text-align: center;
-    margin-bottom: 20%;
 }
 button {
     background-color: #008060;
@@ -188,10 +195,92 @@ button {
 	border-radius: 4px;
 }
 @media only screen and (max-width: 1080px) {
+    h2 {
+        font-size: 150%;
+    }
+    h3 {
+        font-size: 120%;
+    }
+    a.col-md-6.choice {
+        max-width: 45%;
+    }
+}
+
+@media only screen and (max-width: 775px) {
+    .girl {
+        display: none;
+    }
+    .intro_text {
+        flex: 0 0 50%;
+    }
+    .intro_image {
+        max-width: 50%;
+    }
+    .tree {
+        margin-left: 0%;
+        height: auto;
+        max-width: 80%;
+    }
+    .street {
+        margin-left: 0%;
+        height: auto;
+        max-width: 80%;
+        margin-top: 130%;
+    }
+    .point_of_sale_text, .channel_text {
+        margin-left: 0%;
+    }
+    .online_store,.buy {
+        width: 75%;
+    }
+    .online_store_image, .point_of_sale_image, .buy_image, .channel_image {
+        display: none;
+    }
+    .store_hidden {
+        display: inline-block;
+        margin-bottom: 80%;
+    }
+    .point_hidden {
+        display: inline-block;
+        margin-bottom: 100%;
+        margin-left: -10%;
+        margin-top: -10%;
+    }
+    .buy_image_hidden {
+        display: inline-block;
+        margin-left: -20%;
+        margin-bottom: 10%;
+        max-width: 70%;
+    }
+    .bottle {
+        display: none;
+    }
+    .channel_image_hidden {
+        display: inline-block;
+        margin-bottom: 100%;
+        margin-left: -20%;
+        margin-top: -10%;
+    }
+    .start_sell {
+        width: 20em;
+        max-width: 100%;
+    }
+    a.col-md-6.choice {
+        max-width: 100%;
+    }
+    .channel_text,.point_of_sale_text {
+        padding-left: 5%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .store_hidden,.buy_image_hidden,.channel_image_hidden,.point_hidden,.street,.tree {
+        display: none;
+    }
+    .col-md-6 {
+        width: 20em;
+        max-width: 100%;
+    }
     
-
-
-
 }
 
 
