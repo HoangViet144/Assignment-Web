@@ -4,7 +4,9 @@
     line-height: 5em;
 
 }
-
+container-fluid{
+    background-color:#e9ecef ;
+}
 h1#title2{
     font-weight: bolder;
     color: black;
@@ -15,6 +17,7 @@ div#title3{
     font-size: 1.5em;
     line-height: 1.5em;
     height: 10vw;
+    padding-top: 2em;
 }
 div#part1{
     background-color:#e9ecef;
@@ -35,9 +38,8 @@ ul>li>p a,p{
 }
 
 #part2{
-    padding-top: 5em;
     padding-left: 20%;
-    height: 20em;
+    height: 10em;
 }
 span#my-pagrap{
     color: #6b7177;
@@ -46,3 +48,18 @@ span#my-pagrap{
     padding-left: 5vw;
 }
 
+@media (max-width: 760) {
+    img{
+        display: none;
+    }
+    div h1#title2{
+        font-size: 50px!important;
+    }
+    ul{
+        padding-top:12em;
+    }
+
+}
+div.row>span#my-pagrap{
+    padding-right: 30%;
+}
