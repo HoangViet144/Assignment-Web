@@ -14,12 +14,12 @@
 .navbar {
 	width: 100%;
 }
-#logo {
+.logo {
 	max-height: 40px;
 	margin: auto 0;
 }
 
-#company-name {
+.company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
@@ -50,14 +50,15 @@
 #container #header #mySidebar #sidebarContent .row .col-sm-10 {
 	padding: 0%;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-10 #company-name {
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
 
-#container #header #mySidebar #sidebarContent .row .col-sm-10 #company-name:hover {
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
 	text-decoration: none;
+	color: black;
 }
 #container #header #mySidebar #sidebarContent .row .col-sm-1 a {
 	color: black;
@@ -165,6 +166,9 @@
 	padding: 0%;
 	padding-right: 7%;
 }
+#section1 img {
+	width: 100%;
+}
 img {
 	object-fit: cover;
 }
@@ -222,6 +226,9 @@ img {
 	padding: 0%;
 	height: 300px;
 	overflow: hidden;
+}
+#section2 img {
+	width: 100%;
 }
 #section5 {
 	margin-top: 7%;

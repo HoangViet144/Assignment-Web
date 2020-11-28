@@ -21,8 +21,8 @@ $(document).ready(function () {
         $('.active').removeClass('active');
         $(this).addClass('active');
         $('.examples').addClass('hide');
-        var elt = $(this).attr("for");
-        $("#" + elt).removeClass('hide');
+        var elt = $(this).attr("id");
+        $("." + elt).removeClass('hide');
     });
 })
 var x = document.getElementById("my-table-basic");
