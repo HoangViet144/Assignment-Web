@@ -7,10 +7,6 @@ ol {
 
 p {
 	display: block;
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
 }
 
 h1,
@@ -29,7 +25,6 @@ h1,
 	font-size: 1.75em;
 	line-height: 1.2142857143;
 	font-weight: 800;
-	font-family: Helvetica, Arial, sans-serif;
 	letter-spacing: -0.0207142857em;
 }
 
@@ -620,12 +615,12 @@ button {
 #header .navbar {
 	width: 100%;
 }
-#header #logo {
+#header .logo {
 	max-height: 40px;
 	margin: auto 0;
 }
 
-#header #company-name {
+#header .company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
@@ -656,13 +651,13 @@ button {
 #header #mySidebar #sidebarContent .row .col-sm-10 {
 	padding: 0%;
 }
-#header #mySidebar #sidebarContent .row .col-sm-10 #company-name {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
 
-#header #mySidebar #sidebarContent .row .col-sm-10 #company-name:hover {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
 	text-decoration: none;
 }
 #header #mySidebar #sidebarContent .row .col-sm-1 a {
@@ -818,6 +813,10 @@ div.my-footer > div.row {
 	}
 	#footer #my-footer-top-mobile {
 		display: block;
+	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
 		color: white !important;

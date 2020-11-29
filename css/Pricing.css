@@ -56,8 +56,8 @@
 	#body-content #my-table-basic {
 		display: none;
 	}
-	table.table.my-table-basic{
-		display:none;
+	table.table.my-table-basic {
+		display: none;
 	}
 
 	#body-content div > button {
@@ -234,6 +234,10 @@
 @media (max-width: 1200px) {
 	#footer #my-footer-top-desk {
 		display: none;
+	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	#footer #my-footer-top-mobile {
 		display: block;
