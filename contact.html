@@ -10,7 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="index.js"></script>
 	<!-- FONT-FOOTER -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet">
@@ -28,8 +28,8 @@
             <div id="sidebarContent">
                 <div class="row">
                     <div class="col-sm-10">
-                        <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
-                        <a id="company-name"  href="./index.html">shopify</a>
+                        <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                        <a class="company-name"  href="./index.html">shopify</a>
                     </div>
                 </div>
                 <div class="row">
@@ -61,9 +61,9 @@
         </div>
 
         <nav class="header-navbar navbar navbar-expand-md navbar-light">
-            <div class="navbar-brand" href=".index.html">
-                <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
-                <a id="company-name" class="nav-link" href="./index.html">shopify</a>
+            <div class="navbar-brand">
+                <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                <a class="nav-link company-name" href="./index.html">shopify</a>
             </div>
 
             <button class="navbar-toggler" type="button" onclick="openNav()">
@@ -107,7 +107,8 @@
 							<tr>
 								<td>
 									Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ
-								</td>
+                                </td>
+                                <td></td>
 							</tr>
 							<tr>
 								<td>
@@ -130,7 +131,9 @@
 										<li class="website">
 											<p><i class="fa fa-globe"></i> www.shopify.com.vn</p>
 										</li>
-									</ul></td>
+                                    </ul>
+                                </td>
+                                <td></td>
 							</tr>
 
 						</tbody>
