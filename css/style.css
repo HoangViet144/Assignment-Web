@@ -454,6 +454,12 @@
 	#section1 .row #up {
 		margin-top: 50px;
 	}
+	#section3 #header-section3 {
+		font-size: 1.4em;
+	}
+	#section3 .row .col-sm .header {
+		font-size: 1.4em;
+	}
 }
 
 /* footer css*/
