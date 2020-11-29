@@ -388,3 +388,20 @@ div.my-footer > div.row {
 		flex: 0 0 100%;
 	}
 }
+@media only screen and (max-width: 400px) {
+	#section1 {
+		padding-top: 60px;
+	}
+	#section1 .row .col-sm .header {
+		font-size: 1.3em;
+	}
+	#section1 .row .col-sm .content {
+		font-size: 1em;
+	}
+	#section5 .row .header {
+		font-size: 1.3em;
+	}
+	#section5 .row .content {
+		font-size: 1em;
+	}
+}
