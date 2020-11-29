@@ -450,6 +450,11 @@
 		font-size: 1.5em;
 	}
 }
+@media only screen and (max-width: 281px) {
+	#section1 .row #up {
+		margin-top: 50px;
+	}
+}
 
 /* footer css*/
 #footer div.my-footer > nav.navbar.navbar-expand-lg,
