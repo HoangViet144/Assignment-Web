@@ -1,3 +1,10 @@
+#whole-page {
+	max-width: 1600px;
+	margin: auto;
+}
+.img-fluid {
+	width: 100%;
+}
 #title1 {
 	font-weight: 700;
 	color: #6b7177;
@@ -76,7 +83,7 @@ span#my-pagrap {
 	margin-left: 0;
 }
 /*MY ICON FOOTER  */
-#footer *{
+#footer * {
 	text-align: center;
 }
 #footer a.fa.fa-facebook,
@@ -133,14 +140,13 @@ span#my-pagrap {
 		text-decoration: none;
 		font-weight: bolder;
 	}
-
 }
 @media (max-width: 600px) {
-	#my-contact-photo{
+	#my-contact-photo {
 		display: none;
 	}
-	table.table.table-borderless{
-		width:100vw;
+	table.table.table-borderless {
+		width: 100vw;
 	}
 }
 /*header*/
