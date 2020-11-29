@@ -828,3 +828,11 @@ div.my-footer > div.row {
 #footer * {
 	text-align: center;
 }
+@media only screen and (max-width: 500px) {
+	#section4 .section-heading .firstp {
+		margin-top: 20px;
+	}
+	.section4-left .firstp {
+		margin-top: 20px;
+	}
+}
