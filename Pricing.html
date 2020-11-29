@@ -10,7 +10,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="index.js" type="text/javascript"></script>
+    <script src="index.js"></script>
 	<!-- FONT-FOOTER -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet">
@@ -21,103 +21,103 @@
 </head>
 
 	<body>
-    <!--  Starting Header Part -->
-    <div id="background" onclick="closeNav()"></div>
-    <div id="header">
-        <div id="mySidebar" class="sidebar">
-            <div id="sidebarContent">
-                <div class="row">
-                    <div class="col-sm-10">
-                        <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
-                        <a id="company-name"  href="./index.html">shopify</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <a href="./pricing.html">Bảng giá</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./examples.html">Sản phẩm mẫu</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./login.html">Đăng nhập</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./register.html">Đăng ký</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <button onclick="window.location.href='login.html'"> Bắt đầu ngay</button>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="col-sm-12">
-                        <a href="./about.html">Về chúng tôi</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./contact.html">Liên hệ</a>
-                    </div>
-                </div> 
-            </div>
-        </div>
+		<!--  Starting Header Part -->
+		<div id="background" onclick="closeNav()"></div>
+		<div id="header">
+			<div id="mySidebar" class="sidebar">
+				<div id="sidebarContent">
+					<div class="row">
+						<div class="col-sm-10">
+							<img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+							<a class="company-name"  href="./index.html">shopify</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="./pricing.html">Bảng giá</a>
+						</div>
+						<div class="col-sm-12">
+							<a href="./examples.html">Sản phẩm mẫu</a>
+						</div>
+						<div class="col-sm-12">
+							<a href="./login.html">Đăng nhập</a>
+						</div>
+						<div class="col-sm-12">
+							<a href="./register.html">Đăng ký</a>
+						</div>
+						<div class="col-sm-12">
+							<button onclick="window.location.href='login.html'"> Bắt đầu ngay</button>
+						</div>
+					</div> 
+					<div class="row">
+						<div class="col-sm-12">
+							<a href="./about.html">Về chúng tôi</a>
+						</div>
+						<div class="col-sm-12">
+							<a href="./contact.html">Liên hệ</a>
+						</div>
+					</div> 
+				</div>
+			</div>
 
-        <nav class="header-navbar navbar navbar-expand-md navbar-light">
-            <div class="navbar-brand" href=".index.html">
-                <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
-                <a id="company-name" class="nav-link" href="./index.html">shopify</a>
-            </div>
+			<nav class="header-navbar navbar navbar-expand-md navbar-light">
+				<div class="navbar-brand">
+					<img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+					<a class="nav-link company-name" href="./index.html">shopify</a>
+				</div>
 
-            <button class="navbar-toggler" type="button" onclick="openNav()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+				<button class="navbar-toggler" type="button" onclick="openNav()">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-            <div class="collapse navbar-collapse" id="header-menu">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./about.html">Về chúng tôi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./pricing.html">Bảng giá</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link last-item" href="./login.html">Bắt đầu ngay</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-	<!-- The end of the Header Part-->
-    <!-- Starting Intro Part -->
-    <div id="body-content">X
-		<div class="jumbotron first-jumbotron">
-			<h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
-			<p class="display-4">Dùng thử 14 ngày không cần thẻ tín dụng
-			</p>
-			<p class="lead">
-				<a class="btn btn-primary btn-lg" href="./login.html" role="button">Dùng thử miễn phí</a>
-			</p>
+				<div class="collapse navbar-collapse" id="header-menu">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="./about.html">Về chúng tôi</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./pricing.html">Bảng giá</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./login.html">Đăng nhập</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link last-item" href="./login.html">Bắt đầu ngay</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
 		</div>
-		<!-- Ending Intro Part -->
-		<!-- Starting Table Part -->
-		<table class="table" id="my-table-respondsive">
-			<thead>
-				<tr class="my-title">
-					<th scope="col" style="width:40%;"></th>
-					<th scope="col" style="width:20%">Cơ bản<br>
-						<span>Khởi đầu cho doanh nghiệp</span>
-					</th>
-					<th scope="col" style="width:20%">
-						<h1>Shopify</h1>
-						<span>Phát triển doanh nghiệp</span>
-					</th>
-					<th scope="col" style="width:20%">
-						Nâng cao <br>
-						<span>Mở rộng doanh nghiệp</span>
-					</th>
-				</tr>
-			</thead>
+		<!-- The end of the Header Part-->
+		<!-- Starting Intro Part -->
+		<div id="body-content">X
+			<div class="jumbotron first-jumbotron">
+				<h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
+				<p class="display-4">Dùng thử 14 ngày không cần thẻ tín dụng
+				</p>
+				<p class="lead">
+					<a class="btn btn-primary btn-lg" href="./login.html" role="button">Dùng thử miễn phí</a>
+				</p>
+			</div>
+			<!-- Ending Intro Part -->
+			<!-- Starting Table Part -->
+			<table class="table" id="my-table-respondsive">
+				<thead>
+					<tr class="my-title">
+						<th scope="col" style="width:40%;"></th>
+						<th scope="col">Cơ bản<br>
+							<span>Khởi đầu cho doanh nghiệp</span>
+						</th>
+						<th scope="col" style="width:20%">
+							<span class="font-weight:bolder">Shopify</span>
+							<span>Phát triển doanh nghiệp</span>
+						</th>
+						<th scope="col">
+							Nâng cao <br>
+							<span>Mở rộng doanh nghiệp</span>
+						</th>
+					</tr>
+				</thead>
 			<tbody>
 				<tr>
 					<td>Chi phí mỗi tháng</td>
@@ -331,9 +331,9 @@
 		<table class="table" id="my-table-basic">
 			<thead>
 				<tr style="border:none">
-					<th scope="col" colspan="2" >
-						<h1>Cơ bản</h1>
-						<span>Khởi đầu cho doanh nghiệp</span></th>
+					<th scope="col" colspan="2" style="width:20%">
+						<span class="font-weight:bolder">Cơ bản</span>
+						<span>Khởi đầu cho doanh nghiệp</span>
 					</th>
 				</tr>
 			</thead>
@@ -500,8 +500,8 @@
 			<thead>
 				<tr style="border:none">
 					<th scope="col" colspan="2" style="width:50%"><br>
-						<h1>Phát triển</h1>
-						<span style="width:60vw;border:none">Phát triển doanh nghiệp</span></th>
+						<span style="font-weight: bolder;">Phát triển</span>
+						<span style="border:none">Phát triển doanh nghiệp</span>
 					</th>
 				</tr>
 			</thead>
@@ -664,8 +664,12 @@
 		<table class="table" id="my-table-advance">
 			<thead>
 				<tr style="border:none">
-					<th scope="col" colspan="2"><h1>Mở rộng</h1>
-						<span>Mở rộng cho doanh nghiệp</span></th>
+					<!-- <th scope="col" colspan="2"><span style="font-weight:bolder">Mở rộng</span>
+						<span>Mở rộng cho doanh nghiệp</span>
+					</th> -->
+					<th scope="col" colspan="2" style="width:20%">
+						<span class="font-weight:bolder">Mở rộng</span>
+						<span>Mở rộng cho doanh nghiệp</span>
 					</th>
 				</tr>
 			</thead>
@@ -853,7 +857,8 @@
 			<h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
 			<br>
 			<p class="lead">
-				<a type="button" class="btn btn-dark" href="./login.html">Dùng thử miễn phí</a>
+				<a class="btn btn-dark" href="./login.html">Dùng thử miễn phí</a>
+
 			</p>
 		</div>
 		<!--Body Part 4-->
@@ -954,6 +959,7 @@
 		
 		</script>
 
+</div>
 
 	</body>
 

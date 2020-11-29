@@ -139,6 +139,9 @@ span#my-pagrap {
 	#my-contact-photo{
 		display: none;
 	}
+	table.table.table-borderless{
+		width:100vw;
+	}
 }
 /*header*/
 #header {
@@ -156,12 +159,12 @@ span#my-pagrap {
 #header .navbar {
 	width: 100%;
 }
-#header #logo {
+#header .logo {
 	max-height: 40px;
 	margin: auto 0;
 }
 
-#header #company-name {
+#header .company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
@@ -192,13 +195,13 @@ span#my-pagrap {
 #header #mySidebar #sidebarContent .row .col-sm-10 {
 	padding: 0%;
 }
-#header #mySidebar #sidebarContent .row .col-sm-10 #company-name {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
 
-#header #mySidebar #sidebarContent .row .col-sm-10 #company-name:hover {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
 	text-decoration: none;
 }
 #header #mySidebar #sidebarContent .row .col-sm-1 a {
