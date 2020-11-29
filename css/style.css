@@ -535,6 +535,10 @@ div.my-footer > div.row {
 	#footer #my-footer-top-mobile {
 		display: block;
 	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
 		color: white !important;
 		display: block;

@@ -19,7 +19,7 @@
 	margin: auto 0;
 }
 
-#company-name {
+.company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
@@ -227,7 +227,6 @@ img {
 	margin-left: 15%;
 }
 .point_of_sale_text {
-	max-width: auto;
 	position: relative;
 	margin-left: 20%;
 	background-color: #e7f09d;
@@ -504,6 +503,10 @@ div.my-footer > div.row {
 	}
 	#footer #my-footer-top-mobile {
 		display: block;
+	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
 	}
 	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
 		color: white !important;

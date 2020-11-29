@@ -361,6 +361,10 @@ div.my-footer > div.row {
 	#footer #my-footer-top-mobile {
 		display: block;
 	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
 		color: white !important;
 		display: block;
@@ -386,5 +390,22 @@ div.my-footer > div.row {
 @media only screen and (max-width: 480px) {
 	#section2 .row .col-sm {
 		flex: 0 0 100%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	#section1 {
+		padding-top: 60px;
+	}
+	#section1 .row .col-sm .header {
+		font-size: 1.3em;
+	}
+	#section1 .row .col-sm .content {
+		font-size: 1em;
+	}
+	#section5 .row .header {
+		font-size: 1.3em;
+	}
+	#section5 .row .content {
+		font-size: 1em;
 	}
 }
