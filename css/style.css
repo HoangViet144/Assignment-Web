@@ -15,28 +15,26 @@
 	max-height: 40%;
 	padding: 0% 5%;
 }
-.navbar {
+#header .navbar {
 	width: 100%;
 }
-.logo {
+#header .logo {
 	max-height: 40px;
 	margin: auto 0;
 }
-.company-name {
+
+#header .company-name {
 	padding-left: 4%;
 	font-size: 1.3em;
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
-.company-name:hover {
-	color: black;
-}
-#sidebarContent {
+#header #sidebarContent {
 	padding: 15%;
 	padding-top: 5%;
 }
-.sidebar {
+#header .sidebar {
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -47,45 +45,44 @@
 	overflow-x: hidden;
 	transition: 0.5s;
 }
-#container #header #mySidebar #sidebarContent .row {
+#header #mySidebar #sidebarContent .row {
 	display: flex !important;
 	justify-content: space-between;
 	padding-bottom: 5%;
 	border-bottom: 1px solid Gainsboro;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-10 {
+#header #mySidebar #sidebarContent .row .col-sm-10 {
 	padding: 0%;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
 	color: black;
 	font-weight: bold;
 	font-style: italic;
 }
 
-#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
 	text-decoration: none;
-	color: black;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-1 a {
+#header #mySidebar #sidebarContent .row .col-sm-1 a {
 	color: black;
 	font-size: 1.5em;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-1 a:hover {
+#header #mySidebar #sidebarContent .row .col-sm-1 a:hover {
 	text-decoration: none;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-12 {
+#header #mySidebar #sidebarContent .row .col-sm-12 {
 	padding: 0%;
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-12 a {
+#header #mySidebar #sidebarContent .row .col-sm-12 a {
 	color: black;
 	font-weight: 500;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-12 a:hover {
+#header #mySidebar #sidebarContent .row .col-sm-12 a:hover {
 	text-decoration: none;
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-12 button {
+#header #mySidebar #sidebarContent .row .col-sm-12 button {
 	width: 100%;
 	color: white;
 	font-weight: bold;
@@ -94,7 +91,7 @@
 	background-color: #008060;
 	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
 }
-#container #header #mySidebar #sidebarContent .row .col-sm-12 button:hover {
+#header #mySidebar #sidebarContent .row .col-sm-12 button:hover {
 	background-color: #004d3a;
 	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
 }
@@ -292,7 +289,7 @@
 	padding: 10%;
 	padding-top: 15%;
 }
-#section4 #pic5 {
+#section4 #pic5 img {
 	width: 100%;
 }
 #section4 .row .col-sm .row {
