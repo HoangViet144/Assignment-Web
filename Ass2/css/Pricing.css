@@ -1,0 +1,386 @@
+#body-content p.display-4 {
+	font-size: 2em;
+}
+#body-content a.btn.btn-primary.btn-lg {
+	background-color: #008060 !important;
+	border: #008060 !important;
+	box-shadow: none !important;
+}
+* {
+	text-align: center;
+}
+#body-content a.btn.btn-primary.btn-lg:hover {
+	background-color: #002e25 !important;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+#body-content a.btn.btn-primary.btn-lg:focus {
+	background-color: #002e25 !important;
+	box-shadow: 0px 0px 2px 2px #008060 !important;
+}
+#body-content div.jumbotron.first-jumbotron {
+	background-color: white;
+	text-align: center;
+	padding-top: 10%;
+}
+#body-content table {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+#body-content tr:hover {
+	background-color: #f0f1f2;
+}
+
+#body-content #my-table-shopify,
+#body-content #my-table-advance,
+#body-content #my-table-basic,
+#body-content div > button {
+	display: none;
+}
+@media (max-width: 1200px) {
+	#body-content #my-table-respondsive {
+		display: none;
+	}
+	#body-content #my-table-shopify {
+		display: block;
+		/* margin-left: 50vw; */
+	}
+	#body-content #my-table-advance,
+	#body-content #my-table-basic,
+	#body-content #my-table-shopify {
+		margin-top: 20vw;
+		margin-left: 5vw;
+		width: 90vw;
+		border: 1px solid #d2d5d9;
+		font-size: 12px;
+	}
+	#body-content #my-table-advance,
+	#body-content #my-table-basic {
+		display: none;
+	}
+	table.table.my-table-basic {
+		display: none;
+	}
+
+	#body-content div > button {
+		display: block;
+		margin-left: 5vw;
+	}
+
+	#body-content h1 {
+		font-size: 18px !important;
+	}
+
+	#body-content p.display-4 {
+		font-size: 17px;
+	}
+	#body-content div.container > div.row div.col-sm-6,
+	#body-content div.container > p {
+		font-size: 12px;
+	}
+}
+/* div.container>div.row div.col-sm-6, div.container>p{
+		font-size: 12px;
+	} */
+#body-content button {
+	width: 100%;
+	border: 1px solid #d2d5d9;
+	background-color: white;
+	color: #6b7177;
+	height: 3em;
+}
+#body-content button:focus {
+	color: black;
+	background-color: #f0f1f2;
+	font-weight: bolder;
+	outline: none !important;
+}
+#body-content table th,
+#body-content table td {
+	border: 1px solid #d2d5d9;
+	color: #212326;
+}
+
+#body-content table#my-table-respondsive {
+	width: 60vw;
+	margin-left: 20%;
+	border: 1px solid #d2d5d9;
+}
+
+#body-content tr.my-title {
+	background-color: #f0f1f2;
+}
+
+#body-content tr.my-second-title th,
+#body-content tr.my-second-title td {
+	background-color: #f0f1f2;
+	border: none;
+	font-weight: bold;
+	text-align: left;
+}
+
+#body-content th span {
+	font-weight: lighter;
+}
+
+#body-content span.sub-align {
+	vertical-align: sub;
+}
+
+#body-content .strong-text {
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+#body-content .my-ok-icon {
+	font-size: 1.5em;
+	font-weight: 600;
+	color: green;
+}
+
+#body-content a.btn.btn-dark {
+	width: 10em;
+	font-size: 1em;
+	height: 5%;
+}
+
+#body-content div.col-sm-6 {
+	line-height: 2em;
+}
+
+#body-content div.btn-group-vertical {
+	width: 90%;
+}
+#body-content div.container-fluid {
+	background-color: #002e25;
+	margin-top: -2.5%;
+}
+#body-content .btn-group-vertical button {
+	margin-left: 0%;
+}
+
+/* FOOTER NÈ */
+#footer div.my-footer > nav.navbar.navbar-expand-lg,
+#footer div.my-footer > div.row {
+	background-color: #002e25;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+
+#footer li.nav-item > a.nav-link {
+	background-color: #002e25;
+	text-decoration: none;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+	font-weight: bolder;
+}
+#footer a.nav-link:hover {
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div.row > a {
+	color: #b6babf;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div#my-footer-bottom {
+	margin-top: 10px;
+	border-top: 1px solid rgba(210, 213, 217, 0.1);
+	margin-left: 0;
+}
+/*MY ICON FOOTER  */
+
+#footer a.fa.fa-facebook,
+#footer a.fa.fa-twitter,
+#footer a.fa.fa-youtube,
+#footer a.fa.fa-instagram,
+#footer a.fa.fa-linkedin,
+#footer a.fa.fa-pinterest {
+	padding: 6px 2px 0px 2px;
+	font-size: 15px;
+	width: 18px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: white;
+	color: #002e25;
+	margin-left: 5px;
+}
+#footer div.col.align-self-end > a {
+	color: white;
+	text-decoration: none;
+	padding-right: 2.5em;
+	font-weight: lighter;
+}
+#footer div.col-4.col-md-4 > div.row.my-title-col > a {
+	color: white;
+}
+/* check already */
+#footer div.row > div.col-4.col-md-4 > a.my-title-col {
+	color: white;
+	font-weight: bolder;
+}
+#footer div.row > div.col-4.col-md-4 > a {
+	color: #b6babf;
+}
+#footer div.col.align-self-end > div.row > div.col-12.col-md-4 a,
+#footer div.my-footer-bottom-mobile > div.row > div.col-12.col-md-4 > a {
+	color: white !important;
+	text-decoration: none;
+}
+#footer #my-footer-top-mobile {
+	display: none;
+}
+@media (max-width: 1200px) {
+	#footer #my-footer-top-desk {
+		display: none;
+	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	#footer #my-footer-top-mobile {
+		display: block;
+	}
+	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
+		color: white !important;
+		display: block;
+		text-decoration: none;
+		font-weight: bolder;
+	}
+}
+
+/*header*/
+#header {
+	max-width: 1600px;
+	background-color: white;
+	border-bottom: 1px solid #e8e9eb;
+	position: fixed;
+	margin-top: 0;
+	margin-left: auto;
+	width: 100%;
+	z-index: 1000;
+	max-height: 40%;
+	padding: 0% 5%;
+}
+#header .navbar {
+	width: 100%;
+}
+#header .logo {
+	max-height: 40px;
+	margin: auto 0;
+}
+
+#header .company-name {
+	padding-left: 4%;
+	font-size: 1.3em;
+	color: black;
+	font-weight: bold;
+	font-style: italic;
+}
+#header #sidebarContent {
+	padding: 15%;
+	padding-top: 5%;
+}
+#header .sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: white;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+#header #mySidebar #sidebarContent .row {
+	display: flex !important;
+	justify-content: space-between;
+	padding-bottom: 5%;
+	border-bottom: 1px solid Gainsboro;
+}
+#header #mySidebar #sidebarContent .row .col-sm-10 {
+	padding: 0%;
+}
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
+	color: black;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
+	text-decoration: none;
+}
+#header #mySidebar #sidebarContent .row .col-sm-1 a {
+	color: black;
+	font-size: 1.5em;
+}
+#header #mySidebar #sidebarContent .row .col-sm-1 a:hover {
+	text-decoration: none;
+}
+#header #mySidebar #sidebarContent .row .col-sm-12 {
+	padding: 0%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#header #mySidebar #sidebarContent .row .col-sm-12 a {
+	color: black;
+	font-weight: 500;
+}
+#header #mySidebar #sidebarContent .row .col-sm-12 a:hover {
+	text-decoration: none;
+}
+#header #mySidebar #sidebarContent .row .col-sm-12 button {
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	background-color: #008060;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+#header #mySidebar #sidebarContent .row .col-sm-12 button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#background {
+	opacity: 0.2;
+	background-color: black;
+	width: 0%;
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	overflow-x: hidden;
+}
+#header .header-navbar #header-menu ul li {
+	margin: 0 10px;
+}
+#header .header-navbar #header-menu ul li .last-item {
+	color: #fff;
+	background-color: #008060;
+	font-weight: 700;
+	transition: 150ms ease;
+	transition-property: background-color, box-shadow, color;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li .last-item:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li a {
+	font-size: 1em;
+}
+#header .header-navbar {
+	display: flex !important;
+	justify-content: space-between;
+}
+#header .header-navbar .navbar-brand {
+	display: flex;
+	flex-grow: 0 !important;
+}
+#header .header-navbar .navbar-collapse {
+	flex-grow: 0 !important;
+}
+/*end header*/
