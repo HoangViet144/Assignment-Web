@@ -1,0 +1,411 @@
+/*header*/
+#header {
+	max-width: 1600px;
+	background-color: white;
+	border-bottom: 1px solid #e8e9eb;
+	position: fixed;
+	margin-top: 0;
+	margin-left: auto;
+	width: 100%;
+	z-index: 1000;
+	max-height: 40%;
+	padding: 0% 5%;
+}
+.navbar {
+	width: 100%;
+}
+.logo {
+	max-height: 40px;
+	margin: auto 0;
+}
+
+.company-name {
+	padding-left: 4%;
+	font-size: 1.3em;
+	color: black;
+	font-weight: bold;
+	font-style: italic;
+}
+.company-name:hover {
+	color: black;
+}
+#sidebarContent {
+	padding: 15%;
+	padding-top: 5%;
+}
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: white;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+#container #header #mySidebar #sidebarContent .row {
+	display: flex !important;
+	justify-content: space-between;
+	padding-bottom: 5%;
+	border-bottom: 1px solid Gainsboro;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-10 {
+	padding: 0%;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name {
+	color: black;
+	font-weight: bold;
+	font-style: italic;
+}
+
+#container #header #mySidebar #sidebarContent .row .col-sm-10 .company-name:hover {
+	text-decoration: none;
+	color: black;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-1 a {
+	color: black;
+	font-size: 1.5em;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-1 a:hover {
+	text-decoration: none;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-12 {
+	padding: 0%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-12 a {
+	color: black;
+	font-weight: 500;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-12 a:hover {
+	text-decoration: none;
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-12 button {
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	background-color: #008060;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+#container #header #mySidebar #sidebarContent .row .col-sm-12 button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#background {
+	opacity: 0.2;
+	background-color: black;
+	width: 0%;
+	height: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	overflow-x: hidden;
+}
+#header .header-navbar #header-menu ul li {
+	margin: 0 10px;
+}
+#header .header-navbar #header-menu ul li .last-item {
+	color: #fff;
+	background-color: #008060;
+	font-weight: 700;
+	transition: 150ms ease;
+	transition-property: background-color, box-shadow, color;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li .last-item:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+#header .header-navbar #header-menu ul li a {
+	font-size: 1em;
+}
+#header .header-navbar {
+	display: flex !important;
+	justify-content: space-between;
+}
+#header .header-navbar .navbar-brand {
+	display: flex;
+	flex-grow: 0 !important;
+}
+#header .header-navbar .navbar-collapse {
+	flex-grow: 0 !important;
+}
+/*end header*/
+#container {
+	max-width: 1600px;
+	margin: auto;
+}
+#section1 {
+	position: relative;
+	padding: 5.1% 0;
+	background-color: #054a49;
+	padding-bottom: 0%;
+}
+#section1 .row {
+	margin: auto;
+	color: white;
+	padding: 7%;
+}
+#section1 .row .col-sm {
+	padding: 0%;
+}
+#section1 .row .col-sm .row {
+	padding-bottom: 0%;
+	margin-bottom: 5%;
+}
+#section1 .row .col-sm .header {
+	font-size: 2em;
+	font-weight: 500;
+}
+#section1 .row .col-sm .content {
+	font-size: 1.2em;
+}
+#section1 .row .col-sm .row {
+	padding: 0%;
+	padding-right: 7%;
+}
+#section1 img {
+	width: 100%;
+}
+img {
+	object-fit: cover;
+}
+#section2 {
+	padding-top: 7%;
+}
+#section2 .row {
+	padding: 1% 7%;
+	margin: auto;
+}
+#section2 .row .col-sm {
+	padding: 0%;
+	text-align: center;
+	flex: 0 0 25%;
+}
+#section2 .menu {
+	display: flex;
+	justify-content: center;
+}
+#section2 .item {
+	color: black;
+}
+#section2 .item:hover {
+	text-decoration: none;
+}
+.active {
+	border-bottom: 1px solid black;
+}
+.hide {
+	display: none;
+}
+#section2 img {
+	object-fit: contain;
+}
+#section2 .examples .row .row a {
+	color: #008060;
+}
+#section2 .examples .first-item {
+	height: 450px;
+	padding: 0%;
+	margin: auto;
+	overflow: hidden;
+}
+#section2 .examples .item-name {
+	margin: 0%;
+	padding: 1% 0%;
+}
+#section2 .examples .row {
+	justify-content: space-between;
+}
+#section2 .examples .row .col-sm {
+	flex: 0 0 47%;
+}
+#section2 .examples .row .col-sm .item-img {
+	padding: 0%;
+	height: 300px;
+	overflow: hidden;
+}
+#section2 img {
+	width: 100%;
+}
+#section5 {
+	margin-top: 7%;
+}
+#section5 .row p,
+#section5 .row button {
+	margin: 1% auto;
+}
+#section5 .row button {
+	background-color: #008060;
+	padding: 1% 2%;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+	transition: 300ms ease;
+	transition-property: background-color, box-shadow, color;
+	border-radius: 4px;
+}
+#section5 .row button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
+}
+#section5 .row .header {
+	max-width: 70%;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 600;
+}
+#section5 .row .content {
+	color: gray;
+	text-align: center;
+	max-width: 90%;
+}
+#section5 .row a {
+	color: #004d3a;
+	font-weight: 700;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: auto;
+	margin-right: 5%;
+}
+#section5 .row a:hover {
+	text-shadow: 1px 1px gray;
+	transition: 300ms ease;
+}
+* {
+	box-sizing: border-box;
+}
+/* footer css*/
+#footer div.my-footer > nav.navbar.navbar-expand-lg,
+div.my-footer > div.row {
+	background-color: #002e25;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+
+#footer li.nav-item > a.nav-link {
+	background-color: #002e25;
+	text-decoration: none;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+	font-weight: bolder;
+}
+#footer a.nav-link:hover {
+	text-decoration: none;
+	border-bottom: 2px solid white;
+	color: white;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div.row > a {
+	color: #b6babf;
+	text-decoration: none;
+	font-family: "Thasadith", sans-serif;
+}
+#footer div#my-footer-bottom {
+	margin-top: 10px;
+	border-top: 1px solid rgba(210, 213, 217, 0.1);
+	margin-left: 0;
+}
+/*MY ICON FOOTER  */
+
+#footer a.fa.fa-facebook,
+#footer a.fa.fa-twitter,
+#footer a.fa.fa-youtube,
+#footer a.fa.fa-instagram,
+#footer a.fa.fa-linkedin,
+#footer a.fa.fa-pinterest {
+	padding: 6px 2px 0px 2px;
+	font-size: 15px;
+	width: 25px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	background-color: white;
+	color: #002e25;
+	margin-left: 5px;
+}
+#footer div.col.align-self-end > a {
+	color: white;
+	text-decoration: none;
+	padding-right: 2.5em;
+	font-weight: lighter;
+}
+#footer div.col-4.col-md-4 > div.row.my-title-col > a {
+	color: white;
+}
+/* check already */
+#footer div.row > div.col-4.col-md-4 > a.my-title-col {
+	color: white;
+	font-weight: bolder;
+}
+#footer div.row > div.col-4.col-md-4 > a {
+	color: #b6babf;
+}
+#footer div.col.align-self-end > div.row > div.col-12.col-md-4 a,
+#footer div.my-footer-bottom-mobile > div.row > div.col-12.col-md-4 > a {
+	color: white !important;
+	text-decoration: none;
+}
+#footer #my-footer-top-mobile {
+	display: none;
+}
+@media (max-width: 1200px) {
+	#footer #my-footer-top-desk {
+		display: none;
+	}
+	#footer #my-footer-top-mobile {
+		display: block;
+	}
+	#footer #my-footer-top-mobile .col-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	#footer #my-footer-top-mobile > div.row > div.col-12.col-md-4 a {
+		color: white !important;
+		display: block;
+		text-decoration: none;
+		font-weight: bolder;
+	}
+}
+#footer * {
+	text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+	#section1 .row .col-sm {
+		flex: 0 0 100%;
+	}
+	#section2 .row .col-sm {
+		flex: 0 0 50%;
+	}
+	#section2 .examples .row .col-sm {
+		flex: 0 0 100%;
+	}
+}
+@media only screen and (max-width: 480px) {
+	#section2 .row .col-sm {
+		flex: 0 0 100%;
+	}
+}
+@media only screen and (max-width: 400px) {
+	#section1 {
+		padding-top: 60px;
+	}
+	#section1 .row .col-sm .header {
+		font-size: 1.3em;
+	}
+	#section1 .row .col-sm .content {
+		font-size: 1em;
+	}
+	#section5 .row .header {
+		font-size: 1.3em;
+	}
+	#section5 .row .content {
+		font-size: 1em;
+	}
+}
