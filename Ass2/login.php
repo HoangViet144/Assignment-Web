@@ -26,7 +26,7 @@ if ($_SESSION['role'] > 1) {
             <form id="loginform" method="POST">
                 <div class="row">
                     <img src="img/shopify-seeklogo.com.svg" id="logo" alt="Logo" />
-                    <a id="company-name" href="./index.html">shopify</a>
+                    <a id="company-name" href="./index.php">shopify</a>
                 </div>
                 <div class="form-group">
                     <label for="username">Tên đăng nhập</label>
@@ -39,8 +39,8 @@ if ($_SESSION['role'] > 1) {
                 <div class="form-group">
                     <button type="submit">Đăng nhập</button>
                 </div>
-                <div class="form-group" id="register">
-                    <a href="./register.html">Đăng ký mới </a>
+                <div class="form-group">
+                    <a href="./register.php">Đăng ký mới </a>
                 </div>
             </form>
         </div>
