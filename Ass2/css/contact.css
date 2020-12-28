@@ -2,6 +2,71 @@
 	max-width: 1600px;
 	margin: auto;
 }
+#forum {
+	margin: 50px 25px;
+}
+.post {
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px 0;
+	box-shadow: 1px 1px black;
+}
+.post .post_button {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+.post span button {
+	margin: 0%;
+}
+.post button {
+	color: white;
+	padding: 2px 30px;
+	margin: 10px 0px;
+	background-color: #008060;
+	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+}
+.post button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.post .post_name {
+	font-weight: bold;
+	margin-right: 20px;
+}
+.post .admin {
+	color: red;
+}
+.post .user {
+	color: blue;
+}
+.post .article,
+.post .comment {
+	display: flex;
+}
+.post .comment_new {
+	display: flex;
+	margin-top: 20px;
+}
+.post .post_name,
+.post .coment .post_name {
+	flex: 0 0 10%;
+}
+.post .comment_new .textarea_cmt {
+	flex: 0 0 74%;
+	height: 100px;
+	margin-right: 10px;
+}
+.post textarea {
+	width: 100%;
+}
+.post .comments {
+	display: none;
+}
+#forum #title {
+	font-weight: bold;
+	font-size: larger;
+}
 .img-fluid {
 	width: 100%;
 }
@@ -43,7 +108,6 @@ p {
 
 #part2 {
 	/* padding-top: 5em; */
-	height: 20em;
 }
 span#my-pagrap {
 	color: #6b7177;
@@ -51,6 +115,7 @@ span#my-pagrap {
 	text-align: center;
 	padding-left: 5vw;
 }
+
 /* FOOTER */
 #footer div.my-footer > nav.navbar.navbar-expand-lg,
 #footer div.my-footer > div.row {
