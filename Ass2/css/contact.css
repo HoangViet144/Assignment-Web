@@ -20,14 +20,15 @@
 	margin: 0%;
 }
 .post button {
-	color: white;
+	color: #008060;
 	padding: 2px 30px;
 	margin: 10px 0px;
-	background-color: #008060;
-	box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+	background-color: white;
+	border: none;
 }
 .post button:hover {
 	background-color: #004d3a;
+	color: white;
 	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
 }
 .post .post_name {
@@ -52,7 +53,10 @@
 .post .coment .post_name {
 	flex: 0 0 10%;
 }
-.post .comment_new .textarea_cmt {
+.post .delete_cmt {
+	margin-left: 15px;
+}
+.post .textarea_cmt {
 	flex: 0 0 74%;
 	height: 100px;
 	margin-right: 10px;
