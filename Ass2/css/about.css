@@ -732,6 +732,11 @@ button {
 #header .header-navbar .navbar-collapse {
 	flex-grow: 0 !important;
 }
+@media (min-width: 768px) {
+	#header .navbar-expand-md {
+		flex-flow: wrap !important;
+	}
+}
 /*end header*/
 /* footer css*/
 #footer div.my-footer > nav.navbar.navbar-expand-lg,

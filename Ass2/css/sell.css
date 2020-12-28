@@ -131,6 +131,11 @@
 #header .header-navbar .navbar-collapse {
 	flex-grow: 0 !important;
 }
+@media (min-width: 768px) {
+	#header .navbar-expand-md {
+		flex-flow: wrap !important;
+	}
+}
 /*end header*/
 .intro {
 	background-color: #c3f0db;

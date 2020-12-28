@@ -39,15 +39,14 @@ if (isset($_POST['register'])) {
     $password = $_POST['password'];
     $email = $_POST['email'];
     $query = "INSERT into users(name, pass, email, role) values('$username','$password','$email','2')";
-        $result = mysqli_query($con,$query);
-        if($result){
-            $_SESSION['role'] = 2;
-            echo json_encode("");
-            session_destroy();
-        }
-        else{
-            echo json_encode("Wrong password, username");
-        }
+    $result = mysqli_query($con, $query);
+    if ($result) {
+        $_SESSION['role'] = 2;
+        echo json_encode("");
+        session_destroy();
+    } else {
+        echo json_encode("Wrong password, username");
+    }
 }
 
 
@@ -68,4 +67,18 @@ if (isset($_GET['logout'])) {
         setcookie('userID', null, -1, '/');
     }
     header("location:../login.php");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if (!isset($_SESSION['userID'])) {
+        header("location:../login.php");
+        return;
+    }
+    include "../config.php";
+
+
+    $result = mysqli_query($con, "SELECT * FROM users WHERE id = {$_SESSION['userID']} ");
+    $result = mysqli_fetch_assoc($result);
+    mysqli_close($con);
+    echo json_encode($result);
 }
