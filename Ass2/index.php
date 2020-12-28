@@ -35,6 +35,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     </div>
                     <div class="row">
                         <?php
+
                         if ($_SESSION['role'] > 1) {
                             $username = $_SESSION['username'];
                             echo "<div class='col-sm-12'>
@@ -45,9 +46,22 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </div>';
                         }
                         ?>
-                        <div class="col-sm-12">
-                            <a href="./pricing.php">Bảng giá</a>
-                        </div>
+                        <?php
+                        if ($_SESSION['role'] == 3) {
+
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                        } else {
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                            echo "<div class='col-sm-12'>
+                            <a href='./pricing.php'>Bảng giá</a>
+                        </div>";
+                        }
+
+                        ?>
                         <div class="col-sm-12">
                             <a href="./examples.php">Sản phẩm mẫu</a>
                         </div>
@@ -97,9 +111,25 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <li class="nav-item">
                             <a class="nav-link" href="./about.php">Về chúng tôi</a>
                         </li>
+                        <!-- HANDLE PRICIE -->
                         <li class="nav-item">
-                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                            <?php
+                            if ($_SESSION['role'] == 3) {
+
+                                echo "<a class='nav-link' href='./pricing_admin.php'>Bảng giá</a>
+                            ";
+                            } else {
+                                echo "<a class='nav-link' href='./pricing.php'>Bảng giá</a>
+                            ";
+                            }
+
+                            ?>
                         </li>
+                        <!-- END HANDLE PRICE -->
+                        <!-- <li class="nav-item">
+
+                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="./examples.php">Sản phẩm</a>
                         </li>
