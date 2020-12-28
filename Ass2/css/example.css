@@ -1,4 +1,5 @@
 /*header*/
+
 #header {
 	max-width: 1600px;
 	background-color: white;
@@ -407,5 +408,10 @@ div.my-footer > div.row {
 	}
 	#section5 .row .content {
 		font-size: 1em;
+	}
+}
+@media (min-width: 768px) {
+	#header .navbar-expand-md {
+		flex-flow: wrap !important;
 	}
 }

@@ -22,7 +22,7 @@
 .post button {
 	color: #008060;
 	padding: 2px 30px;
-	margin: 10px 0px;
+	margin: 0px 0px;
 	background-color: white;
 	border: none;
 }
@@ -57,8 +57,8 @@
 	margin-left: 15px;
 }
 .post .textarea_cmt {
-	flex: 0 0 74%;
-	height: 100px;
+	flex: 0 0 70%;
+	height: 70px;
 	margin-right: 10px;
 }
 .post textarea {
@@ -66,6 +66,22 @@
 }
 .post .comments {
 	display: none;
+}
+@media only screen and (max-width: 1200px) {
+	.span_sendbtn {
+		flex-basis: 100% !important;
+	}
+	.textarea_cmt {
+		flex-basis: 80% !important;
+	}
+	.delete_cmt {
+		padding-left: 0px !important;
+	}
+}
+@media only screen and (max-width: 456px) {
+	.textarea_cmt {
+		flex-basis: 100% !important;
+	}
 }
 #forum #title {
 	font-weight: bold;
@@ -83,7 +99,7 @@
     padding-top:1.2em
 } */
 h1#title2 {
-	font-weight: bolder;
+	font-weight: bold;
 	color: black;
 }
 div#title3 {
@@ -133,7 +149,7 @@ span#my-pagrap {
 	text-decoration: none;
 	color: white;
 	font-family: "Thasadith", sans-serif;
-	font-weight: bolder;
+	font-weight: bold;
 }
 #footer a.nav-link:hover {
 	text-decoration: none;
@@ -183,7 +199,7 @@ span#my-pagrap {
 /* check already */
 #footer div.row > div.col-4.col-md-4 > a.my-title-col {
 	color: white;
-	font-weight: bolder;
+	font-weight: bold;
 }
 #footer div.row > div.col-4.col-md-4 > a {
 	color: #b6babf;
@@ -211,7 +227,7 @@ span#my-pagrap {
 		color: white !important;
 		display: block;
 		text-decoration: none;
-		font-weight: bolder;
+		font-weight: bold;
 	}
 }
 @media (max-width: 600px) {
@@ -345,7 +361,7 @@ span#my-pagrap {
 	font-size: 1em;
 }
 #header .header-navbar {
-	display: flex !important;
+	display: flex;
 	justify-content: space-between;
 }
 #header .header-navbar .navbar-brand {
@@ -354,5 +370,13 @@ span#my-pagrap {
 }
 #header .header-navbar .navbar-collapse {
 	flex-grow: 0 !important;
+}
+.navbar-expand-md {
+	flex-flow: row;
+}
+@media (min-width: 768px) {
+	#header .navbar-expand-md {
+		flex-flow: wrap !important;
+	}
 }
 /*end header*/
