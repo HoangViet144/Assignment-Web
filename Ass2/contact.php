@@ -130,6 +130,11 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
         <!-- The end of the Header Part-->
         <!-- Starting Intro Part -->
         <div class="container-fluid" style="padding-top: 8em">
+            <?php
+            if (isset($_COOKIE['editmode']) && $_COOKIE['editmode']) {
+                echo '<button class="X_btn" id="editmode">Tắt chỉnh sửa</button>';
+            }
+            ?>
             <div class="row">
                 <div class="col-sm">
                     <table class="table table-borderless">
@@ -141,32 +146,31 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row" colspan="2" style="font-size: 30px">Gặp vấn đề thắc mắc với Shopify ?</th>
+                                <th scope="row" colspan="2" style="font-size: 30px" id="article"></th>
                             </tr>
                             <tr>
-                                <td>Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ</td>
+                                <td id='content'></td>
                                 <td></td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p>Công ty TNHH thương mại SHOPIFY</p>
-                                    <p>Mã Số Thuế : 10801010014</p>
+                                    <p id='companyname'></p>
+                                    <p id='taxnumber'></p>
 
-                                    <ul>
+                                    <ul id='content_list'>
                                         <li>
-                                            <p>
-                                                <i class="fas fa-map-marker-alt"></i>
-                                                Lý Thường kiệt Quận 10, Thành Phố Hồ Chí Minh.
+                                            <p id='companyaddr'>
+
                                             </p>
                                         </li>
-                                        <li class="phone">
-                                            <p><i class="fa fa-phone"></i> 190091989</p>
+                                        <li class="phone" id='phone'>
+
                                         </li>
-                                        <li class="email">
-                                            <p><i class="fa fa-envelope"></i> info@shopify.com.vn</p>
+                                        <li class="email" id='mail'>
+
                                         </li>
-                                        <li class="website">
-                                            <p><i class="fa fa-globe"></i> www.shopify.com.vn</p>
+                                        <li class="website" id='web'>
+
                                         </li>
                                     </ul>
                                 </td>

@@ -67,7 +67,7 @@ insert into itemtype values ('Basic Shopify',29,true,true,2,true,true,4,true,tru
                              true,89,
                              true,false,false,false);
 insert into itemtype values ('Advanced Shopify',299,true,true,15,true,true,8,true,true,true,true,true,true,true,true, 74,true,true, true,2.4,2.4,0.5, true,89, true,true,true,true);
-insert into itemtype values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true)
+insert into itemtype values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true);
 
 
 CREATE TABLE `item` (
@@ -102,10 +102,25 @@ CREATE TABLE `item` (
   `Domains` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
                              
-=======
+
 INSERT INTO users (name,pass,email,role) VALUES ('Thanhvien1','1234', 'tv1@gmail.com', 2);
 INSERT INTO users (name,pass,email,role) VALUES ('Admin1','1234', 'admin1@gmail.com', 3);
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('1','Trang web của tôi có được hỗ trợ vĩnh viễn không?',-1,1609151819);
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('1','Tôi không đăng nhập vào trang web của mình được?',-1,1609151819);
 INSERT INTO posts (userid,content,postid,`order`) VALUES ('2','Rất tiếc nhưng chúng tôi chỉ hỗ trợ trong vòng 2 năm',1,1609151819);
->>>>>>> 83e9111227af189b4e443a351cc7a3001b55b90d
+
+CREATE TABLE `contact`(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `fieldname` VARCHAR(100),
+    `content` VARCHAR(1000),
+    PRIMARY KEY(id),
+);
+INSERT INTO contact(fieldname, content) VALUES ('article','Gặp vấn đề thắc mắc với Shopify ?');
+INSERT INTO contact(fieldname, content) VALUES ('content','Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ');
+INSERT INTO contact(fieldname, content) VALUES ('companyname','Công ty TNHH thương mại SHOPIFY');
+INSERT INTO contact(fieldname, content) VALUES ('taxnumber','10801010014');
+INSERT INTO contact(fieldname, content) VALUES ('companyaddr','Lý Thường kiệt Quận 10, Thành Phố Hồ Chí Minh.');
+INSERT INTO contact(fieldname, content) VALUES ('phone','190091989');
+INSERT INTO contact(fieldname, content) VALUES ('mail','info@shopify.com.vn');
+INSERT INTO contact(fieldname, content) VALUES ('web','www.shopify.com.vn');
+

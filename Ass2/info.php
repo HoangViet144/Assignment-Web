@@ -3,30 +3,31 @@
 <?php
 session_start();
 if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+if ($_SESSION['role'] == 1) {
+    header('Location: ./login.php');
+}
 ?>
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Shopify</title>
     <link rel="stylesheet" href="css/info.css" />
     <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
+    <!-- ICON FOOTER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
     <script src="info.js"></script>
-    <!-- FONT-FOOTER -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet" />
-    <!-- ICON FOOTER -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- FONT ICON -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
 </head>
+<?php
+if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+?>
 
 <body>
-    <div id="whole-page">
+    <div id="container">
         <div id="background" onclick="closeNav()"></div>
         <div id="header">
             <div id="mySidebar" class="sidebar">
@@ -39,6 +40,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     </div>
                     <div class="row">
                         <?php
+
                         if ($_SESSION['role'] > 1) {
                             $username = $_SESSION['username'];
                             echo "<div class='col-sm-12'>
@@ -49,9 +51,22 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </div>';
                         }
                         ?>
-                        <div class="col-sm-12">
-                            <a href="./pricing.php">Bảng giá</a>
-                        </div>
+                        <?php
+                        if ($_SESSION['role'] == 3) {
+
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                        } else {
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                            echo "<div class='col-sm-12'>
+                            <a href='./pricing.php'>Bảng giá</a>
+                        </div>";
+                        }
+
+                        ?>
                         <div class="col-sm-12">
                             <a href="./examples.php">Sản phẩm mẫu</a>
                         </div>
@@ -71,7 +86,9 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <a href="./service/auth.php?logout=true">Đăng xuất</a>
                         </div>';
                         }
+
                         ?>
+
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
@@ -99,9 +116,25 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <li class="nav-item">
                             <a class="nav-link" href="./about.php">Về chúng tôi</a>
                         </li>
+                        <!-- HANDLE PRICIE -->
                         <li class="nav-item">
-                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                            <?php
+                            if ($_SESSION['role'] == 3) {
+
+                                echo "<a class='nav-link' href='./pricing_admin.php'>Bảng giá</a>
+                            ";
+                            } else {
+                                echo "<a class='nav-link' href='./pricing.php'>Bảng giá</a>
+                            ";
+                            }
+
+                            ?>
                         </li>
+                        <!-- END HANDLE PRICE -->
+                        <!-- <li class="nav-item">
+
+                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="./examples.php">Sản phẩm</a>
                         </li>
@@ -127,16 +160,12 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 </div>
             </nav>
         </div>
-        <!-- The end of the Header Part-->
-
-        <div class="container-fluid" style="padding-top: 8em">
-
+        <div id="section1">
+            <button class="edit_contact">Quản lý trang Liên hệ </button>
         </div>
 
-
-        <!-- FOOTER PART -->
         <div id="footer">
-            <div class="container-fluid my-footer" style="background-color: #002e25; margin-top: -30px">
+            <div class="container-fluid my-footer" style="background-color: #002e25">
                 <div id="my-footer-top" style="border-bottom: 1px solid rgba(210, 213, 217, 0.1)">
                     <nav class="navbar navbar-expand-lg" id="my-footer-top-desk">
                         <ul class="navbar-nav">
@@ -144,7 +173,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                                 <a class="nav-link" href="./index.php">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./about.php">Thông tin</a>
+                                <a class="nav-link" href="./examples.php">Sản phẩm mẫu</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./pricing.php">Giá</a>
@@ -155,10 +184,10 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </ul>
                     </nav>
                     <div id="my-footer-top-mobile">
-                        <div class="row" style="padding-top: 3em; padding-bottom: 3em">
+                        <div class="row">
                             <div class="col-12 col-md-4">
                                 <a href="./index.php">Trang chủ</a><br />
-                                <a href="./contact.php">Thông tin</a> <br />
+                                <a href="./examples.php">Sản phẩm mẫu</a> <br />
                                 <a href="./pricing.php">Giá</a> <br />
                                 <a href="./contact.php">Liên hệ</a> <br />
                             </div>
@@ -168,17 +197,17 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 <div class="row" style="padding-top: 40px">
                     <div class="col-4 col-md-4">
                         <a href="./contact.php" class="my-title-col">HỖ TRỢ </a><br />
-                        <a href="#">24/7</a><br />
-                        <a href="#">Diễn đàn</a>
+                        <a href="#">24/7 </a><br />
+                        <a href="#">Diễn đàn </a>
                     </div>
                     <div class="col-4 col-md-4">
                         <a href="./index.php" class="my-title-col">SHOPIFY</a><br />
                         <a href="./contact.php">Liên hệ </a><br />
-                        <a href="./about.php">Thông tin </a>
+                        <a href="./examples.php">Sản phẩm mẫu </a>
                     </div>
                     <div class="col-4 col-md-4">
-                        <a href="./Sell.php" class="my-title-col">KINH DOANH ONLINE </a><br />
-                        <a href="./Sell.php">Bán hàng Online </a><br />
+                        <a href="#" class="my-title-col">KINH DOANH ONLINE </a><br />
+                        <a href="#">Bán hàng Online </a><br />
                         <a href="#">Tên miền </a><br />
                         <a href="#">Giỏ hàng </a>
                     </div>
@@ -205,30 +234,6 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             </div>
         </div>
     </div>
-    <!-- END FOOTER PART -->
-    <script>
-        var x = document.getElementById("my-table-basic");
-        var y = document.getElementById("my-table-shopify");
-        var z = document.getElementById("my-table-advance");
-
-        function myFunction1() {
-            x.style.display = "block";
-            y.style.display = "none";
-            z.style.display = "none";
-        }
-
-        function myFunction2() {
-            y.style.display = "block";
-            x.style.display = "none";
-            z.style.display = "none";
-        }
-
-        function myFunction3() {
-            z.style.display = "block";
-            y.style.display = "none";
-            x.style.display = "none";
-        }
-    </script>
 </body>
 
 </html>

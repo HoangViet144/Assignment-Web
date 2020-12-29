@@ -1,5 +1,122 @@
 $(document).ready(function () {
-    console.log("ahihi")
+    var cookie = document.cookie
+    cookie = cookie.split('; ');
+    var result = {};
+    for (var i = 0; i < cookie.length; i++) {
+        var cur = cookie[i].split('=');
+        result[cur[0]] = cur[1];
+    }
+    console.log("hihi", result)
+    var canEdit = false
+    if (('editmode' in result) && result['editmode']) {
+        canEdit = true
+    }
+    $.ajax({
+        type: 'GET',
+        url: './service/contact.php',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data)
+            var tmp = `<th scope="row" colspan="2" style="font-size: 30px" id="article">
+            <span id="article_content">${data.article}</span>`
+            if (canEdit) tmp += `<br/>
+            <button class='btn edit X_btn' id='edit_article'>Sửa</button>
+            <button class='btn del X_btn' id='del_article'>Xóa</button>
+            </th>`
+            else tmp += `</th>`
+            $('#article').replaceWith(tmp)
+            tmp = `<td id='content'>
+            <span id='content_content'>${data.content}</span>`
+            if (canEdit) tmp += `<br/>
+            <button class='btn edit X_btn' id='edit_content'>Sửa</button>
+            <button class='btn del X_btn' id='del_content'>Xóa</button>
+            </td>`
+            else tmp += `</td>`
+            $('#content').replaceWith(tmp)
+            tmp = `<p id='companyname'>
+            <span id='companyname_content'>${data.companyname}</span>`
+            if (canEdit) tmp += `<br/>
+            <button class='btn edit X_btn' id='edit_companyname'>Sửa</button>
+            <button class='btn del X_btn' id='del_companyname'>Xóa</button>
+            </p>`
+            else tmp += `</p>`
+            $('#companyname').replaceWith(tmp)
+            tmp = `<p id='taxnumber'>
+            Mã số thuế: <span id='taxnumber_content'>${data.taxnumber}</span>`
+            if (canEdit) tmp += `<br/>
+            <button class='btn edit X_btn' id='edit_taxnumber'>Sửa</button>
+            <button class='btn del X_btn' id='del_taxnumber'>Xóa</button>
+            </p>`
+            else tmp += `</p>`
+            $('#taxnumber').replaceWith(tmp)
+            tmp = `<p id='companyaddr'>
+            <i class="fas fa-map-marker-alt"></i> 
+            <span id='companyaddr_content'>${data.companyaddr}</span>`
+            if (canEdit) tmp += `<br/>
+                <button class='btn edit X_btn' id='edit_companyaddr'>Sửa</button>
+                <button class='btn del X_btn' id='del_companyaddr'>Xóa</button>
+            </p>`
+            else tmp += `</p>`
+            $('#companyaddr').replaceWith(tmp)
+            tmp = `<li class="phone" id='phone'>
+            <p><i class="fa fa-phone"></i> 
+            <span id='phone_content'>${data.phone}</span>`
+            if (canEdit) tmp += ` <br/>
+                <button class='btn edit X_btn' id='edit_phone'>Sửa</button>
+                <button class='btn del X_btn' id='del_phone'>Xóa</button>
+                </p>
+            </li>`
+            else tmp += "</p></li>"
+            $('#phone').replaceWith(tmp)
+            tmp = `<li class="mail" id='mail'>
+            <p><i class="fa fa-envelope"></i>
+            <span id='mail_content'> ${data.mail}</span>`
+            if (canEdit) tmp += `<br/>
+                <button class='btn edit X_btn' id='edit_mail'>Sửa</button>
+                <button class='btn del X_btn' id='del_mail'>Xóa</button>
+                </p>
+            </li>`
+            else tmp += "</p></li>"
+            $('#mail').replaceWith(tmp)
+            tmp = `<li class="website" id='web'>
+            <p><i class="fa fa-globe"></i>
+            <span id='web_content'>${data.web}</span>`
+            if (canEdit) tmp += `<br/>
+                <button class='btn edit X_btn' id='edit_web'>Sửa</button>
+                <button class='btn del X_btn' id='del_web'>Xóa</button>
+                </p>
+            </li>`
+            else tmp += "</p></li>"
+            $('#web').replaceWith(tmp)
+            var basicEle = ['web', 'mail', 'phone', 'taxnumber', 'companyname', 'content', 'article', 'companyaddr']
+            for (var fieldname in data) {
+                if (!basicEle.includes(fieldname)) {
+                    var tmp = `<li  id='${fieldname}'>
+                        <p>${fieldname}: <span id='${fieldname}_content'> ${data[fieldname]}</span>`
+                    if (canEdit) tmp += `<br/>
+                        <button class='btn edit X_btn' id='edit_${fieldname}'>Sửa</button>
+                        <button class='btn del X_btn' id='del_${fieldname}'>Xóa</button>
+                        </p>
+                    </li>`
+                    else tmp += "</p></li>"
+                    $('#content_list').append(tmp)
+                }
+            }
+            if (canEdit) {
+                $('#content_list').append(`
+                <div id='new_fieldname_content'>
+                    <div>Tên trường(field):</div>
+                    <div><textarea class='X_content' id='new_fieldname'></textarea></div>
+                    <div>Nội dung:</div>
+                    <div><textarea class='X_content' id='new_content'></textarea></div>
+                    <div><button class='X_btn' id='newInfor'>Thêm</button></div>
+                </div>
+                `)
+            }
+
+        }
+    })
+
     $.ajax({
         type: 'GET',
         url: '/service/post.php',
@@ -213,4 +330,158 @@ $(document).on('click', '.delete_cmt_btn', function () {
             }
         })
     }
+})
+$(document).on('click', '.del', function () {
+    var fieldname = $(this).attr('id').substring(4)
+    $.ajax({
+        type: 'DELETE',
+        url: './service/contact.php/' + fieldname,
+        success: function (response) {
+            alert(response)
+            window.location.href = 'contact.php';
+        }
+    })
+})
+$(document).on('click', '.edit', function () {
+    var fieldname = $(this).attr('id').substring(5)
+    if (fieldname === 'article') {
+        var oldContent = $('#article_content').html()
+        console.log($('#article_content').html())
+        $('#article').replaceWith(
+            `<th scope="row" colspan="2" style="font-size: 30px" id="article">
+            <textarea id="article_content"> ${oldContent} </textarea>
+            <br/>
+            <button class='btn saveContact X_btn' id='save_article'>Lưu</button>
+            </th>`
+        )
+    }
+    else if (fieldname === 'content') {
+        var oldContent = $('#content_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<td id='content'>
+            <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+            <br/>
+            <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+            </td>`
+        )
+    }
+    else if (fieldname === 'companyname') {
+        var oldContent = $('#companyname_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<p id='companyname'>
+            <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+            <br/>
+            <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+            </p>`
+        )
+    }
+    else if (fieldname === 'taxnumber') {
+        var oldContent = $('#taxnumber_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<p id='taxnumber'>
+            Mã số thuế: <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+            <br/>
+            <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+            </p>`
+        )
+    }
+    else if (fieldname === 'companyaddr') {
+        var oldContent = $('#companyaddr_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<p id='companyaddr'>
+                <i class="fas fa-map-marker-alt"></i> 
+                <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+                <br/>
+                <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+            </p>`
+        )
+    }
+    else if (fieldname === 'phone') {
+        var oldContent = $('#phone_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<li class="phone" id='phone'>
+            <p><i class="fa fa-phone"></i> 
+            <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+            <br/>
+            <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+            </p>
+            </li>`
+        )
+    }
+    else if (fieldname === 'mail') {
+        var oldContent = $('#mail_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<li class="mail" id='email'>
+                <p><i class="fa fa-envelope"></i>
+                <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+                <br/>
+                <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+                </p>
+            </li>`
+        )
+    }
+    else if (fieldname === 'web') {
+        var oldContent = $('#web_content').html()
+        $(`#${fieldname}`).replaceWith(
+            `<li class="website" id='web'>
+                <p><i class="fa fa-globe"></i>
+                <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+                <br/>
+                <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+                </p>
+            </li>`
+        )
+    }
+    else {
+        console.log(fieldname)
+        var oldContent = $(`[id='${fieldname}_content']`).html()
+        $(`[id='${fieldname}']`).replaceWith(
+            `<li  id='${fieldname}'>
+                ${fieldname}:
+                <div><textarea class='X_content' id="${fieldname}_content"> ${oldContent} </textarea></div>
+                <br/>
+                <button class='btn saveContact X_btn' id='save_${fieldname}'>Lưu</button>
+                </p>
+            </li>`
+        )
+    }
+
+
+})
+$(document).on('click', '.saveContact', function () {
+    var fieldname = $(this).attr('id').substring(5)
+    var newContent = $(`[id='${fieldname}_content']`).val()
+    console.log(newContent)
+    $.ajax({
+        type: 'PUT',
+        url: './service/contact.php',
+        data: {
+            fieldname: fieldname,
+            content: newContent
+        },
+        success: function (res) {
+            alert(res)
+            window.location.href = "./contact.php"
+        }
+    })
+})
+$(document).on('click', '#editmode', function () {
+    $('.X_btn').css('display', 'none')
+    $('#new_fieldname_content').css('display', 'none')
+    document.cookie = "editmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+})
+$(document).on('click', '#newInfor', function () {
+    console.log("ùkdjfdk")
+    $.ajax({
+        type: 'PUT',
+        url: './service/contact.php',
+        data: {
+            fieldname: $('#new_fieldname').val(),
+            content: $('#new_content').val()
+        },
+        success: function (res) {
+            alert(res)
+            window.location.href = "./contact.php"
+        }
+    })
 })
