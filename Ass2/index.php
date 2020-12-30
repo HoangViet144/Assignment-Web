@@ -71,10 +71,10 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <a href="./login.php">Đăng nhập</a>
                         </div>';
                             echo '<div class="col-sm-12">
-                            <a href="./register.php">Đăng ký</a>;
+                            <a href="./register.php">Đăng ký</a>
                         </div>';
                             echo "<div class='col-sm-12'>
-                            <button onclick='window.location.href='login.php''>Bắt đầu ngay</button>
+                            <button onclick='window.location.href=`login.php`'>Bắt đầu ngay</button>
                         </div>";
                         } else {
                             echo '<div class="col-sm-12">

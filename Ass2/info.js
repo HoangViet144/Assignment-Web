@@ -21,6 +21,12 @@ $(document).ready(function () {
         document.cookie = 'editmode=true' + ";" + expires + ";path=/";
         window.location.href = 'contact.php'
     })
+    $(".edit_pricing").click(function () {
+        window.location.href = 'pricing_admin.php'
+    })
+    $(".edit_product").click(function () {
+        window.location.href = 'example_admin.php'
+    })
     $('#adjustform').submit(function (e) {
         if ($("#display_password").val().length == 0 || $("#display_email").val().length == 0) {
             alert('mật khẩu và email không được rỗng')
@@ -60,7 +66,7 @@ $(document).ready(function () {
                     alert("Update successfully!");
                 }
                 else {
-                   if (data == "Email exist") alert("Email exist");
+                    if (data == "Email exist") alert("Email exist");
                 }
             },
         })

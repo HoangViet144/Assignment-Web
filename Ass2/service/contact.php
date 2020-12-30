@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $fieldname = $_PUT['fieldname'];
     $content = $_PUT['content'];
 
-    if ($content == '') {
+    if ($content === '') {
         echo json_encode('Noi dung cap nhat rong');
         return;
     }

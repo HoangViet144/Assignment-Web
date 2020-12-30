@@ -79,7 +79,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <a href="./register.php">Đăng ký</a>;
                         </div>';
                             echo "<div class='col-sm-12'>
-                            <button onclick='window.location.href='login.php''>Bắt đầu ngay</button>
+                            <button onclick='window.location.href=`login.php`'>Bắt đầu ngay</button>
                         </div>";
                         } else {
                             echo '<div class="col-sm-12">
@@ -161,7 +161,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             </nav>
         </div>
         <div id="section1">
-        <?php
+            <?php
             $username = $_SESSION['username'];
             $password = $_SESSION['password'];
             $email = $_SESSION['email'];
@@ -185,8 +185,31 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             }
             echo '<button type="submit">Cập Nhật</button>';
             echo '</form>';
-        ?>
+            ?>
 
+        </div>
+        <div id="section2">
+            <?php
+            if ($_SESSION['role'] === 3) {
+                echo '
+                <h3>Quản lý trang web</h3>
+                <div class="row">
+                    <div class="col-sm">
+                        <button class="edit_product">Quản lý trang Sản phẩm</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_pricing">Quản lý trang Biểu giá</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_contact">Quản lý trang Liên hệ</button>
+                    </div>
+                    <div class="col-sm">
+                        <button>Quản lý Thành viên</button>
+                    </div>
+                </div>
+            ';
+            }
+            ?>
         </div>
 
         <div id="footer">

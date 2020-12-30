@@ -33,7 +33,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 <div class="row">
                     <div class="col-sm-10">
                         <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
-                        <a class="company-name" href="./index.html">shopify</a>
+                        <a class="company-name" href="./index.php">shopify</a>
                     </div>
                 </div>
                 <div class="row">
@@ -41,24 +41,24 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <a id="view" href="./pricing.php">Bảng giá</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./examples.html">Sản phẩm mẫu</a>
+                        <a href="./examples.php">Sản phẩm mẫu</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./login.html">Đăng nhập</a>
+                        <a href="./login.php">Đăng nhập</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./register.html">Đăng ký</a>
+                        <a href="./register.php">Đăng ký</a>
                     </div>
                     <div class="col-sm-12">
-                        <button onclick="window.location.href='login.html'">Bắt đầu ngay</button>
+                        <button onclick="window.location.href='login.php'">Bắt đầu ngay</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="./about.html">Về chúng tôi</a>
+                        <a href="./about.php">Về chúng tôi</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./contact.html">Liên hệ</a>
+                        <a href="./contact.php">Liên hệ</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
         <nav class="header-navbar navbar navbar-expand-md navbar-light">
             <div class="navbar-brand">
                 <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
-                <a class="nav-link company-name" href="./index.html">shopify</a>
+                <a class="nav-link company-name" href="./index.php">shopify</a>
             </div>
 
             <button class="navbar-toggler" type="button" onclick="openNav()">
@@ -77,16 +77,16 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <div class="collapse navbar-collapse" id="header-menu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./about.html">Về chúng tôi</a>
+                        <a class="nav-link" href="./about.php">Về chúng tôi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="myview">Bảng giá</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Đăng nhập</a>
+                        <a class="nav-link" href="./login.php">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link last-item" href="./login.html">Bắt đầu ngay</a>
+                        <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
                     </li>
                 </ul>
             </div>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
             <p class="display-4">Dùng thử 14 ngày không cần thẻ tín dụng</p>
             <p class="lead">
-                <a class="btn btn-primary btn-lg" href="./login.html" role="button">Dùng thử miễn phí</a>
+                <a class="btn btn-primary btn-lg" href="./login.php" role="button">Dùng thử miễn phí</a>
             </p>
         </div>
         <!-- Ending Intro Part -->
@@ -821,7 +821,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <h1>Xây dựng cửa hàng trước, xây dựng kế hoạch sau.</h1>
             <br />
             <p class="lead">
-                <a class="btn btn-dark" href="./login.html">Dùng thử miễn phí</a>
+                <a class="btn btn-dark" href="./login.php">Dùng thử miễn phí</a>
             </p>
         </div>
         <!--Body Part 4-->
