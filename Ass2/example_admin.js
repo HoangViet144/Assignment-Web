@@ -35,3 +35,18 @@ $(document).ready(function () {
     $('#edit_id').css('display', 'none')
     $('#edit_id_label').css('display', 'none')
 })
+$(document).ready(function () {
+    $("#searchall").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        console.log(value)
+        $(".product").filter(function () {
+            var id = $(this).attr("id")
+            $(this).toggle(
+                $('#name_' + id).text().toLowerCase().indexOf(value) > -1 ||
+                $('#href_' + id).text().toLowerCase().indexOf(value) > -1 ||
+                $('#title_' + id).text().toLowerCase().indexOf(value) > -1
+            )
+        });
+    });
+});
+
