@@ -235,7 +235,9 @@ $(document).on('click', '.send_btn', function () {
     }
     var content = '.cmt_content_' + postID
     if (!('userID' in result) || $(content).val() === "") return
-
+    if ($(content).val() === "") {
+        return
+    }
     $.ajax({
         type: 'POST',
         url: '/service/post.php',
@@ -285,7 +287,7 @@ $(document).on('click', '.save', function () {
     var id = $(this).attr("id").substring(5)
     var contentDiv = ".post_content_textarea_" + id
     var content = $(contentDiv).val()
-
+    if (content === '') return
     $.ajax({
         type: 'PUT',
         url: '/service/post.php',

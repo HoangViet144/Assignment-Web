@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userid = $_POST['userid'];
     $content = $_POST['content'];
     if ($content == '') {
-        echo json_encode("Bai viet khogn co noi dung");
+        echo json_encode("Bai viet khong co noi dung");
         return;
     }
     $order = $_POST['order'];
