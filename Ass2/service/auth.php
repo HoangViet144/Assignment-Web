@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $query = "SELECT `role`,`id`,`email` FROM `users` WHERE `name` = '$username' and `pass` = '$password' ";
+    $query = "SELECT `role`,`id`,`email`,`fullname`,`DOB`,`sex` FROM `users` WHERE `name` = '$username' and `pass` = '$password' ";
     $result = mysqli_query($con, $query);
     $result = mysqli_fetch_row($result);
     mysqli_close($con);
@@ -21,6 +21,9 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
         $_SESSION['email'] = $result[2];
+        $_SESSION['fullname'] = $result[3];
+        $_SESSION['DOB'] = $result[4];
+        $_SESSION['sex'] = $result[5];
 
 
         setcookie('username', $_SESSION['username'], time() + (86400), "/");
@@ -98,20 +101,39 @@ if (isset($_POST['adjust'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
+    $fullname = $_POST['fullname'];
+    $dob = strtotime($_POST['dob']);
+    $sex = $_POST['sex'];
+    $check_space = FALSE;
+    $DOB = date('Y-m-d',$dob);
 
-    $query = "SELECT `role`,`id` FROM `users` WHERE `email` = '$email' and `name` <> '$username' ";
-    $result = mysqli_query($con, $query);
-    $result = mysqli_fetch_row($result);
-    if ($result) {
-        echo json_encode("Email exist");
+    for ($x = 0 ; $x < strlen($password);$x++) {
+        if ($password[$x] == ' ') {
+            echo json_encode("No space in password!");
+            $check_space = TRUE;
+        }
     }
-    else {
-        $query = "UPDATE users SET `email` = '$email', `pass` = '$password' WHERE `name` = '$username';";
+    for ($x = 0 ; $x < strlen($email);$x++) {
+        if ($email[$x] == ' ') {
+            echo json_encode("No space in email!");
+            $check_space = TRUE;
+        }
+    }
+    if ($check_space == FALSE) {
+        $query = "SELECT `role`,`id` FROM `users` WHERE `email` = '$email' and `name` <> '$username' ";
         $result = mysqli_query($con, $query);
+        $result = mysqli_fetch_row($result);
         if ($result) {
-            echo json_encode("");
-        } else {
-            echo json_encode("Wrong");
+            echo json_encode("Email exist");
+        }
+        else {
+            $query = "UPDATE users SET `email` = '$email', `pass` = '$password',`fullname` = '$fullname',`DOB` = '$DOB',`sex` = '$sex' WHERE `name` = '$username';";
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                echo json_encode("");
+            } else {
+                echo json_encode("Wrong");
+            }
         }
     }
     mysqli_close($con);

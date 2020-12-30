@@ -26,6 +26,21 @@ $(document).ready(function () {
             alert('mật khẩu và email không được rỗng')
             return
         }
+        if ($("#display_password").val().length > 35 || $("#display_password").val().length < 4) {
+            alert('Mật khẩu phải nằm trong khoảng 4-35')
+            return
+        }
+        if ($('#display_fullname').val().length >35) {
+            alert('Họ tên phải nằm trong khoảng 0-35')
+        }
+        var date_time = document.getElementById("display_dob").value;
+        var sex= null;
+        if (document.getElementById("male").checked == true) {
+            sex = document.getElementById("male").value;
+        }
+        else if (document.getElementById("female").checked == true) {
+            sex = document.getElementById("female").value;
+        }
         e.preventDefault()
         $.ajax({
             type: 'POST',
@@ -35,7 +50,10 @@ $(document).ready(function () {
                 adjust: true,
                 username: $("#display_name").val(),
                 password: $("#display_password").val(),
-                email: $("#display_email").val()
+                email: $("#display_email").val(),
+                fullname: $("#display_fullname").val(),
+                dob: date_time,
+                sex: sex
             },
             success: function (data) {
                 if (data == "") {

@@ -4,6 +4,14 @@ $(document).ready(function () {
             alert('Tên đăng nhập, mật khẩu và email không được rỗng')
             return
         }
+        if ($("#username").val().length >= 10 || $("#username").val().length <= 2) {
+            alert('Tên đăng nhập phải nằm trong khoảng 2-10')
+            return
+        }
+        if ($("#password").val().length > 35 || $("#password").val().length < 4) {
+            alert('Mật khẩu phải nằm trong khoảng 4-35')
+            return
+        }
         e.preventDefault()
         $.ajax({
             type: 'POST',

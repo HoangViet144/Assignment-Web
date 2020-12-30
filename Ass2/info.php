@@ -165,10 +165,24 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             $username = $_SESSION['username'];
             $password = $_SESSION['password'];
             $email = $_SESSION['email'];
+            $fullname = $_SESSION['fullname'];
+            $dob = $_SESSION['DOB'];
+            $sex = $_SESSION['sex'];
             echo '<form id="adjustform" method="POST">';
-            echo "Tên đăng nhập : <input type='text' id='display_name' value='"; echo "$username' readonly> <br><br>";
+            echo "Username : <input type='text' id='display_name' value='"; echo "$username' readonly> <br><br>";
             echo "Mật khẩu : <input type='text' id='display_password' value='"; echo "$password'> <br><br>";
             echo "Email : <input type='text' id='display_email' value='"; echo "$email'> <br><br>";
+            echo "Họ và tên : <input type='text' id='display_fullname' value='"; echo "$fullname'> <br><br>";
+            echo "Ngày tháng năm sinh : <input type='date' id='display_dob' value='"; echo "$dob'> <br><br>";
+            if ($sex == "male") {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male' checked> Nữ: <input type='radio' id='female' name='gender' value='female'> <br><br>";
+            }
+            if ($sex == "female") {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male'> Nữ: <input type='radio' id='female' name='gender' value='female' checked> <br><br>";
+            }
+            else {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male'> Nữ: <input type='radio' id='female' name='gender' value='female'> <br><br>";
+            }
             echo '<button type="submit">Cập Nhật</button>';
             echo '</form>';
         ?>
