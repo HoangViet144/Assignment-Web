@@ -113,7 +113,7 @@ CREATE TABLE `contact`(
     `id` INT NOT NULL AUTO_INCREMENT,
     `fieldname` VARCHAR(100),
     `content` VARCHAR(1000),
-    PRIMARY KEY(id),
+    PRIMARY KEY(id)
 );
 INSERT INTO contact(fieldname, content) VALUES ('article','Gặp vấn đề thắc mắc với Shopify ?');
 INSERT INTO contact(fieldname, content) VALUES ('content','Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ');
