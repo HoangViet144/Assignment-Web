@@ -1,3 +1,6 @@
+<?php
+include 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <?php
@@ -6,22 +9,22 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
 ?>
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Pricing</title>
-	<link rel="stylesheet" href="css/pricing.css" />
-	<link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="index.js"></script>
-	<script src="pricing.js"></script>
-	<!-- FONT-FOOTER -->
-	<link rel="preconnect" href="https://fonts.gstatic.com" />
-	<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet" />
-	<!-- ICON FOOTER -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<!-- FONT ICON -->
-	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing</title>
+    <link rel="stylesheet" href="css/pricing.css" />
+    <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="index.js"></script>
+    <script src="pricing.js"></script>
+    <!-- FONT-FOOTER -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet" />
+    <!-- ICON FOOTER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- FONT ICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
 
 
 
@@ -112,22 +115,45 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <thead>
                 <tr class="my-title">
                     <th scope="col" style="width: 40%"></th>
-                    <th scope="col">
+                    <!-- <th scope="col">
                         Cơ bản<br />
                         <span>Khởi đầu cho doanh nghiệp</span>
-                    </th>
-                    <th scope="col">
-                        Shopify<br />
-                        <span>Phát triển doanh nghiệp</span>
-                    </th>
-                    <!-- <th scope="col" style="width: 20%">
+                    </th> -->
+
+                    <?php
+                    $result = mysqli_query($con, "SELECT * FROM item");
+                    $i = 1;
+                    while ($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <th scope="col">
+                            <?php echo $row["name"]; ?><br />
+                            <!-- <span>Khởi đầu cho doanh nghiệp</span> -->
+                        </th>
+
+                    <?php
+                        $i++;
+                    }
+
+                    ?>
+                </tr>
+
+
+
+
+
+
+                <!-- <th scope="col">
+                Shopify<br />
+                <span>Phát triển doanh nghiệp</span>
+            </th> -->
+                <!-- <th scope="col" style="width: 20%">
 						<span class="font-weight:bolder">Shopify<br /></span>
 						<span>Phát triển doanh nghiệp</span>
 					</th> -->
-                    <th scope="col">
-                        Nâng cao <br />
-                        <span>Mở rộng doanh nghiệp</span>
-                    </th>
+                <!-- <th scope="col">
+                Nâng cao <br />
+                <span>Mở rộng doanh nghiệp</span>
+            </th> -->
                 </tr>
             </thead>
             <tbody>

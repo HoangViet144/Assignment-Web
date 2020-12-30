@@ -1,6 +1,4 @@
-<?php
-include 'config.php';
-?>
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +18,118 @@ include 'config.php';
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"> -->
+<?php
+include 'config.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<?php
+session_start();
+if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+?>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manage Product</title>
+    <link rel="stylesheet" href="css/pricing_admin.css" />
+    <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="index.js"></script>
+    <script src="management.js"></script>
+    <!-- FONT-FOOTER -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet" />
+    <!-- ICON FOOTER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- FONT ICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="background" onclick="closeNav()"></div>
+    <div id="header">
+        <div id="mySidebar" class="sidebar">
+            <div id="sidebarContent">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                        <a class="company-name" href="./index.php">shopify</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a id="view" href="./pricing_admin.php">Quản lý bảng giá</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./management.php">Quản lý người dùng</a>
+                    </div>
+                    <!-- <div class="col-sm-12">
+                        <a href="./login.php">Đăng nhập</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./register.php">Đăng ký</a>
+                    </div> -->
+                    <div class="col-sm-12">
+                        <button onclick="window.location.href='login.php'">Đăng xuất</button>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-sm-12">
+                        <a href="./about.php">Về chúng tôi</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./contact.php">Liên hệ</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <nav class="header-navbar navbar navbar-expand-md navbar-light">
+            <div class="navbar-brand">
+                <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                <a class="nav-link company-name" href="./index.php">shopify</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="header-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./management.php">Quản lý người dùng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="myview" href="./pricing_admin.php">Quản lý bảng giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.php">Đăng xuất</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="section1">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">
@@ -57,7 +166,9 @@ include 'config.php';
                         <tr id="<?php echo $row["id"]; ?>">
                             <td>
                                 <span class="custom-checkbox">
+
                                     <input type="checkbox" class="user_checkbox" data-user-id="<?php echo $row["id"]; ?>">
+
                                     <label for="checkbox2"></label>
                                 </span>
                             </td>
@@ -67,12 +178,12 @@ include 'config.php';
                             <td><?php echo $row["email"]; ?></td>
                             <td><?php echo $row["role"]; ?></td>
                             <td>
-                                <a href='<?php if ($row["role"] == '3') echo '#';
+                                <a href='<?php if ($row["role"] == '3') echo '';
                                             else echo '#editEmployeeModal' ?>' class='edit' data-toggle='modal'>
                                     <!-- <a href='#editEmployeeModal' class='edit' data-toggle='modal'> -->
                                     <i class="update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-name="<?php echo $row["name"]; ?>" data-email="<?php echo $row["email"]; ?>" title="Chỉnh sửa" data-role="<?php echo $row["role"]; ?>">Sửa</i>
                                 </a>
-                                <a href='<?php if ($row["role"] == '3') echo '#';
+                                <a href='<?php if ($row["role"] == '3') echo '';
                                             else echo '#deleteEmployeeModal' ?>' id='mydelete' class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i data-toggle="tooltip" title="Xóa"> Xóa</i></a>
                             </td>
                         </tr>

@@ -168,17 +168,12 @@ if (count($_POST) > 0) {
         mysqli_close($con);
     }
 }
+
+
 if (count($_POST) > 0) {
     if ($_POST['type'] == 4) {
         $name = $_POST['name'];
-        // $lst = ($name);
-        // echo count(($name));
-        // for ($x = 0; $x < count($lst); $x += 1) {
-        //     $lst[$x] = "'" + $x + "'";
-        // }
-        // echo $lst;
-
-        $sql = "DELETE FROM item WHERE name in ($name)";
+        $sql = "DELETE FROM item WHERE name in ('$name')";
         if (mysqli_query($con, $sql)) {
             echo $name;
         } else {

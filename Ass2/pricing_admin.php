@@ -30,6 +30,15 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -45,29 +54,29 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a id="view" href="./pricing.php">Bảng giá</a>
+                        <a id="view" href="./pricing_admin.php">Quản lý bảng giá</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./examples.php">Sản phẩm mẫu</a>
+                        <a href="./management.php">Quản lý người dùng</a>
                     </div>
-                    <div class="col-sm-12">
+                    <!-- <div class="col-sm-12">
                         <a href="./login.php">Đăng nhập</a>
                     </div>
                     <div class="col-sm-12">
                         <a href="./register.php">Đăng ký</a>
-                    </div>
+                    </div> -->
                     <div class="col-sm-12">
-                        <button onclick="window.location.href='login.php'">Bắt đầu ngay</button>
+                        <button onclick="window.location.href='login.php'">Đăng xuất</button>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-12">
                         <a href="./about.php">Về chúng tôi</a>
                     </div>
                     <div class="col-sm-12">
                         <a href="./contact.php">Liên hệ</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -84,17 +93,17 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <div class="collapse navbar-collapse" id="header-menu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./about.php">Về chúng tôi</a>
+                        <a class="nav-link" href="./management.php">Quản lý người dùng</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="myview">Bảng giá</a>
+                        <a class="nav-link" id="myview">Quản lý bảng giá</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Đăng nhập</a>
+                        <a class="nav-link" href="./login.php">Đăng xuất</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -146,7 +155,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                                 <td><?php echo $row["name"]; ?></td>
                                 <td>
                                     <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                        <i class="update" data-toggle="tooltip" data-id="<?php echo $row["name"]; ?>" data-name="<?php echo $row["name"]; ?>" title="Chỉnh sửa">Sửa</i>
+                                        <i class="update" data-toggle="tooltip" data-id="<?php echo $row["name"]; ?>" data-name="<?php echo $row["name"]; ?>" data-monthlyPrice="<?php echo $row["monthlyPrice"]; ?>" data-onlineStore="<?php echo $row["onlineStore"]; ?>" data-UnlimitedProducts="<?php echo $row["UnlimitedProducts"]; ?>" data-StaffAccounts="<?php echo $row["StaffAccounts"]; ?>" data-Support="<?php echo $row["Support"]; ?>" data-SalesChannels="<?php echo $row["SalesChannels"]; ?>" data-Locations="<?php echo $row["Locations"]; ?>" data-ManualOrderCreation="<?php echo $row["ManualOrderCreation"]; ?>" data-DiscountCodes="<?php echo $row["DiscountCodes"]; ?>" data-FreeSSL="<?php echo $row["FreeSSL"]; ?>" data-AbandonedCartRecovery="<?php echo $row["AbandonedCartRecovery"]; ?>" data-GiftCards="<?php echo $row["GiftCards"]; ?>" data-ProfessionalReports="<?php echo $row["ProfessionalReports"]; ?>" data-AdvancedReportBuilder="<?php echo $row["AdvancedReportBuilder"]; ?>" data-ShippingRates="<?php echo $row["ShippingRates"]; ?>" data-ShippingDiscount="<?php echo $row["ShippingDiscount"]; ?>" data-PrintShipping="<?php echo $row["PrintShipping"]; ?>" data-USPS="<?php echo $row["USPS"]; ?>" data-FraudAnalysis="<?php echo $row["FraudAnalysis"]; ?>" data-OnlineCreditCard="<?php echo $row["OnlineCreditCard"]; ?>" data-InpersonCreditCard="<?php echo $row["InpersonCreditCard"]; ?>" data-Additional="<?php echo $row["Additional"]; ?>" data-POSLite="<?php echo $row["POSLite"]; ?>" data-POSPro="<?php echo $row["POSPro"]; ?>" data-SellCurrencies="<?php echo $row["SellCurrencies"]; ?>" data-Exchange="<?php echo $row["Exchange"]; ?>" data-SellLanguage="<?php echo $row["SellLanguage"]; ?>" data-Domains="<?php echo $row["Domains"]; ?>" title="Chỉnh sửa">Sửa</i>
 
                                     </a>
                                     <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["name"]; ?>" data-toggle="modal">
@@ -310,7 +319,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 <div class="modal-content">
                     <form id="update_form">
                         <div class="modal-header">
-                            <h4 class="modal-title">Edit User</h4>
+                            <h4 class="modal-title">Chỉnh sửa thông tin</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">

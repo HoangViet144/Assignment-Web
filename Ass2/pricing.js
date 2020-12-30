@@ -2,7 +2,7 @@ $(document).ready(function () {
     // $("#myview").click(function() {
 
     $.ajax({
-        url: '/service/view.php',
+        url: 'viewPrice.php',
         type: 'get',
         dataType: 'JSON',
         success: function (response) {

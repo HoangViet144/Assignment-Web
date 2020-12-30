@@ -3,14 +3,15 @@ $(document).on('click','.update',function(e) {
     var id=$(this).attr("data-id");
     var name=$(this).attr("data-name");
     var email=$(this).attr("data-email");
-    var role=$(this).attr("data-role");
-    if(role!='3')
-    {
-        $('#id_u').val(id);
-        $('#name_u').val(name);
-        $('#email_u').val(email);
-        $('#role_u').val(role);
-    }
+	var role=$(this).attr("data-role");
+	if(role!=3){
+		$('#id_u').val(id);
+		$('#name_u').val(name);
+		$('#email_u').val(email);
+		$('#role_u').val(role);
+	}
+    
+    
 
 });
 

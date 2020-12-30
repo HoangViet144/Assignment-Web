@@ -34,7 +34,7 @@ if (count($_POST) > 0) {
 if (count($_POST) > 0) {
     if ($_POST['type'] == 4) {
         $id = $_POST['id'];
-        $sql = "DELETE FROM users WHERE id in ($id)";
+        $sql = "DELETE FROM users WHERE id in ($id) and role !='3'";
         if (mysqli_query($con, $sql)) {
             echo $id;
         } else {
