@@ -261,3 +261,40 @@ button:hover {
 	background-color: #004d3a;
 	color: white;
 }
+
+
+#adjustform {
+	width: 500px;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+#adjustform button {
+	background-color: #008060;
+	color: white;
+	padding: 5px 20px;
+	width: 50%;
+	font-weight: bold;
+	align-items: center;
+}
+#adjustform button:hover {
+	background-color: #004d3a;
+	box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+#adjustform input {
+	width: 40%;
+}
+
+
+#adjustform label {
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bold;
+	width: 200px;
+	padding: 6px 0;
+	color: #464646;
+	vertical-align: top;
+}
