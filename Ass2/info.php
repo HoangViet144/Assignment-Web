@@ -161,18 +161,44 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             </nav>
         </div>
         <div id="section1">
-        <?php
+            <?php
             $username = $_SESSION['username'];
             $password = $_SESSION['password'];
             $email = $_SESSION['email'];
             echo '<form id="adjustform" method="POST">';
-            echo "Tên đăng nhập : <input type='text' id='display_name' value='"; echo "$username' readonly> <br><br>";
-            echo "Mật khẩu : <input type='text' id='display_password' value='"; echo "$password'> <br><br>";
-            echo "Email : <input type='text' id='display_email' value='"; echo "$email'> <br><br>";
+            echo "Tên đăng nhập : <input type='text' id='display_name' value='";
+            echo "$username' readonly> <br><br>";
+            echo "Mật khẩu : <input type='text' id='display_password' value='";
+            echo "$password'> <br><br>";
+            echo "Email : <input type='text' id='display_email' value='";
+            echo "$email'> <br><br>";
             echo '<button type="submit">Cập Nhật</button>';
             echo '</form>';
-        ?>
+            ?>
 
+        </div>
+        <div id="section2">
+            <?php
+            if ($_SESSION['role'] === 3) {
+                echo '
+                <h3>Quản lý trang web</h3>
+                <div class="row">
+                    <div class="col-sm">
+                        <button class="edit_product">Quản lý trang Sản phẩm</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_pricing">Quản lý trang Biểu giá</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_contact">Quản lý trang Liên hệ</button>
+                    </div>
+                    <div class="col-sm">
+                        <button>Quản lý Thành viên</button>
+                    </div>
+                </div>
+            ';
+            }
+            ?>
         </div>
 
         <div id="footer">

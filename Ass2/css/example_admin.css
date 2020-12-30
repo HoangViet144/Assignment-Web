@@ -255,7 +255,7 @@
 #edit_product {
 	border: 1px solid black;
 	border-radius: 10px;
-	width: 500px;
+	width: 50%;
 	margin: auto;
 }
 #section2 {
@@ -272,4 +272,24 @@
 .btn:hover {
 	background-color: #004d3a;
 	color: white;
+}
+@media only screen and (max-width: 1200px) {
+	.col-sm {
+		flex: 0 0 50%;
+	}
+	.title_list {
+		display: none;
+	}
+	#insert-form,
+	#edit_product {
+		width: 75%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.col-sm {
+		flex: 0 0 100%;
+	}
+	.title_list {
+		display: none;
+	}
 }

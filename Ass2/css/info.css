@@ -247,3 +247,17 @@
 #section1 {
 	padding: 100px 3%;
 }
+#section2 {
+	padding: 0% 3%;
+	padding-bottom: 50px;
+}
+
+button {
+	color: #008060;
+	background-color: white;
+	border: none;
+}
+button:hover {
+	background-color: #004d3a;
+	color: white;
+}

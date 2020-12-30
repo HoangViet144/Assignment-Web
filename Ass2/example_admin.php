@@ -220,7 +220,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
 
         <div id="section3">
             <h3>Danh sách các hình ảnh sản phẩm</h3>
-            <div class='row'>
+            <div class='row title_list'>
                 <div class='col-sm'>
                     <h4>Tên cửa hàng</h4>
                 </div>
@@ -242,7 +242,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     $image = base64_encode($ele['img']);
                     $title = $ele['title'];
                     echo
-                        "<div class='row'>
+                        "<hr><div class='row'>
                             <div class='col-sm' id='name_$img_id'>$img_name</div>
                             <div class='col-sm' id='href_$img_id'>$img_href</div>
                             <div class='col-sm' id='title_$img_id'>$title</div>
