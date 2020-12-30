@@ -113,7 +113,7 @@ CREATE TABLE `contact`(
     `id` INT NOT NULL AUTO_INCREMENT,
     `fieldname` VARCHAR(100),
     `content` VARCHAR(1000),
-    PRIMARY KEY(id),
+    PRIMARY KEY(id)
 );
 INSERT INTO contact(fieldname, content) VALUES ('article','Gặp vấn đề thắc mắc với Shopify ?');
 INSERT INTO contact(fieldname, content) VALUES ('content','Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ');
@@ -123,4 +123,13 @@ INSERT INTO contact(fieldname, content) VALUES ('companyaddr','Lý Thường ki�
 INSERT INTO contact(fieldname, content) VALUES ('phone','190091989');
 INSERT INTO contact(fieldname, content) VALUES ('mail','info@shopify.com.vn');
 INSERT INTO contact(fieldname, content) VALUES ('web','www.shopify.com.vn');
+
+CREATE TABLE `examples`(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `img_name` VARCHAR(1000),
+    `img` longblob,
+    `href` VARCHAR(1000),
+    `title` VARCHAR(1000),
+    PRIMARY KEY(id)
+);
 
