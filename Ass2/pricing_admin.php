@@ -14,28 +14,33 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manage Product</title>
+    <link rel="stylesheet" href="css/pricing_admin.css" />
+    <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="index.js"></script>
+    <script src="pricing_admin.js"></script>
+    <!-- FONT-FOOTER -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200;1,600&family=Thasadith&display=swap" rel="stylesheet" />
+    <!-- ICON FOOTER -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- FONT ICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="pricing_admin.js"></script>
-    <script src="index.js"></script>
-
-
-
 </head>
 
 <body>
-    <!-- <div id="background" onclick="closeNav()"></div>
+    <div id="background" onclick="closeNav()"></div>
     <div id="header">
         <div id="mySidebar" class="sidebar">
             <div id="sidebarContent">
                 <div class="row">
                     <div class="col-sm-10">
                         <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
-                        <a class="company-name" href="./index.html">shopify</a>
+                        <a class="company-name" href="./index.php">shopify</a>
                     </div>
                 </div>
                 <div class="row">
@@ -43,24 +48,24 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <a id="view" href="./pricing.php">Bảng giá</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./examples.html">Sản phẩm mẫu</a>
+                        <a href="./examples.php">Sản phẩm mẫu</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./login.html">Đăng nhập</a>
+                        <a href="./login.php">Đăng nhập</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./register.html">Đăng ký</a>
+                        <a href="./register.php">Đăng ký</a>
                     </div>
                     <div class="col-sm-12">
-                        <button onclick="window.location.href='login.html'">Bắt đầu ngay</button>
+                        <button onclick="window.location.href='login.php'">Bắt đầu ngay</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="./about.html">Về chúng tôi</a>
+                        <a href="./about.php">Về chúng tôi</a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="./contact.html">Liên hệ</a>
+                        <a href="./contact.php">Liên hệ</a>
                     </div>
                 </div>
             </div>
@@ -69,7 +74,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
         <nav class="header-navbar navbar navbar-expand-md navbar-light">
             <div class="navbar-brand">
                 <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
-                <a class="nav-link company-name" href="./index.html">shopify</a>
+                <a class="nav-link company-name" href="./index.php">shopify</a>
             </div>
 
             <button class="navbar-toggler" type="button" onclick="openNav()">
@@ -79,23 +84,22 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             <div class="collapse navbar-collapse" id="header-menu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="./about.html">Về chúng tôi</a>
+                        <a class="nav-link" href="./about.php">Về chúng tôi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="myview">Bảng giá</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Đăng nhập</a>
+                        <a class="nav-link" href="./login.php">Đăng nhập</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link last-item" href="./login.html">Bắt đầu ngay</a>
+                        <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
                     </li>
                 </ul>
             </div>
         </nav>
-    </div> -->
-    <!-- The end of the Header Part-->
-    <div class="container">
+    </div>
+    <div id="section1">
         <p id="success"></p>
         <div class="table-wrapper">
             <div class="table-title">
@@ -464,6 +468,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
