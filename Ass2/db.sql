@@ -30,44 +30,14 @@ INSERT INTO users (name,pass,email,role) VALUES ('Thanh vien 1','1234', 'tv1@gma
 INSERT INTO users (name,pass,email,role) VALUES ('Admin 1','1234', 'admin1@gmail.com', 3);
 
 -- PRICING
-CREATE TABLE `itemtype` (
-  `name` varchar(255) NOT NULL,
-  `monthlyPrice` int(10) UNSIGNED DEFAULT NULL,
-  `onlineStore` tinyint(1) DEFAULT NULL,
-  `UnlimitedProducts` tinyint(1) DEFAULT NULL,
-  `StaffAccounts` int(10) UNSIGNED DEFAULT NULL,
-  `Support` tinyint(1) DEFAULT NULL,
-  `SalesChannels` tinyint(1) DEFAULT NULL,
-  `Locations` int(10) UNSIGNED DEFAULT NULL,
-  `ManualOrderCreation` tinyint(1) DEFAULT NULL,
-  `DiscountCodes` tinyint(1) DEFAULT NULL,
-  `FreeSSL` tinyint(1) DEFAULT NULL,
-  `AbandonedCartRecovery` tinyint(1) DEFAULT NULL,
-  `GiftCards` tinyint(1) DEFAULT NULL,
-  `ProfessionalReports` tinyint(1) DEFAULT NULL,
-  `AdvancedReportBuilder` tinyint(1) DEFAULT NULL,
-  `ShippingRates` tinyint(1) DEFAULT NULL,
-  `ShippingDiscount` decimal(3,0) DEFAULT NULL,
-  `PrintShipping` tinyint(1) DEFAULT NULL,
-  `USPS` tinyint(1) DEFAULT NULL,
-  `FraudAnalysis` tinyint(1) DEFAULT NULL,
-  `OnlineCreditCard` decimal(4,1) DEFAULT NULL,
-  `InpersonCreditCard` decimal(4,1) DEFAULT NULL,
-  `Additional` decimal(3,0) DEFAULT NULL,
-  `POSLite` tinyint(1) DEFAULT NULL,
-  `POSPro` tinyint(1) DEFAULT NULL,
-  `SellCurrencies` tinyint(1) DEFAULT NULL,
-  `Exchange` tinyint(1) DEFAULT NULL,
-  `SellLanguage` decimal(3,0) DEFAULT NULL,
-  `Domains` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-insert into itemtype values ('Basic Shopify',29,true,true,2,true,true,4,true,true,true,true,true,false,false,false,
+-- 
+insert into item values ('Basic Shopify',29,true,true,2,true,true,4,true,true,true,true,true,false,false,false,
                              64,true,false,
                              true,2.9,2.7,2.0,
                              true,89,
                              true,false,false,false);
-insert into itemtype values ('Advanced Shopify',299,true,true,15,true,true,8,true,true,true,true,true,true,true,true, 74,true,true, true,2.4,2.4,0.5, true,89, true,true,true,true);
-insert into itemtype values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true);
+insert into item values ('Advanced Shopify',299,true,true,15,true,true,8,true,true,true,true,true,true,true,true, 74,true,true, true,2.4,2.4,0.5, true,89, true,true,true,true);
+insert into item values ('Shopify',79,true,true,5,true,true,5,true,true,true,true,true,true,false,false, 72,true,true,true,2.6,2.5,1.0, true,89, true,true,true,true);
 
 
 CREATE TABLE `item` (

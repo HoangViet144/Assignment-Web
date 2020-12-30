@@ -2,7 +2,7 @@ $(document).ready(function() {
 	// $("#myview").click(function() {
 
 		$.ajax({
-			url: 'viewPrice.php',
+			url: '/service/view.php',
 			type: 'get',
 			dataType: 'JSON',
 			success: function(response) {
@@ -42,26 +42,6 @@ $(document).ready(function() {
 						// console.log(response[0]);
 					}
 
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
                     // var name = response[i][key];
                     // var monthlyPrice = $monthlyPrice;
                     // var onlineStore = response[i].onlineStore;
