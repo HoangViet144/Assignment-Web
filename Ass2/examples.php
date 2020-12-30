@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
+<?php
+session_start();
+if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+include "config.php";
+$resultiter = mysqli_query($con, "SELECT * FROM examples");
+$img = array();
+while ($row = mysqli_fetch_assoc($resultiter)) {
+    array_push($img, $row);
+}
+mysqli_close($con);
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -144,268 +155,169 @@
                 </div>
             </div>
             <div class="examples home-furniture">
+                <?php
+                for ($i = 0; $i < count($img); $i++) {
+                    $img_name = $img[$i]['img_name'];
+                    $img_href = $img[$i]['href'];
+                    $image = base64_encode($img[$i]['img']);
+                    $title = $img[$i]['title'];
+                    if ($title == 'home-furniture') {
+                        echo "<div class='row'>
+                            <div class='row first-item'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                        break;
+                    }
+                }
+                ?>
+
                 <div class="row">
-                    <div class="row first-item">
-                        <img src="img/example_pic2.webp" alt="pic2" />
-                    </div>
-                    <div class="row item-name">
-                        <a href="https://www.mollyjogger.com/">Mollyjogger</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic3.webp" alt="pic3" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.denydesigns.com/">DENY Designs</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic4.webp" alt="pic4" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://dowsedesign.co.uk/">Dowse Design</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic5.jpg" alt="pic5" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://raredevice.net/">Rare Device</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic6.webp" alt="pic6" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://missboon.ca/">Miss Boon</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic7.webp" alt="pic7" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.the-citizenry.com/">The Citizenry</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic8.webp" alt="pic8" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://shophorne.com/">Horne</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic9.webp" alt="pic9" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.polyandbark.com/">Poly & Bark</a>
-                        </div>
-                    </div>
+                    <?php
+                    for ($i = 1; $i < count($img); $i++) {
+                        $img_name = $img[$i]['img_name'];
+                        $img_href = $img[$i]['href'];
+                        $image = base64_encode($img[$i]['img']);
+                        $title = $img[$i]['title'];
+                        if ($title != 'home-furniture') continue;
+                        echo
+                            "<div class='col-sm'>
+                            <div class='row item-img'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                    }
+                    ?>
                 </div>
             </div>
 
             <div class="examples hide book">
+                <?php
+                for ($i = 0; $i < count($img); $i++) {
+                    $img_name = $img[$i]['img_name'];
+                    $img_href = $img[$i]['href'];
+                    $image = base64_encode($img[$i]['img']);
+                    $title = $img[$i]['title'];
+                    if ($title == 'book') {
+                        echo "<div class='row'>
+                            <div class='row first-item'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                        break;
+                    }
+                }
+                ?>
                 <div class="row">
-                    <div class="row first-item">
-                        <img src="img/example_pic10.webp" alt="pic10" />
-                    </div>
-                    <div class="row item-name">
-                        <a href="https://lindsayletters.co/">Lindsay Letters</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic11.webp" alt="pic11" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://abookapart.com/">A Book Apart</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic12.webp" alt="pic12" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://greerchicago.com/">GREERChicago</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic13.webp" alt="pic13" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.cookbookvillage.com/">Cookbook Village</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic14.webp" alt="pic14" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.thelacmastore.org/"> LA County Museum of Art - Mu</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic15.webp" alt="pic15" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.shopbookshop.com/">Book/Shop</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic16.webp" alt="pic16" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://cca-bookstore.com/"> CAA Bookstore</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic17.webp" alt="pic17" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://outerlayer.com/">Outer Layer</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic18.webp" alt="pic18" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.hanjigifts.com/">Hanji Gifts</a>
-                        </div>
-                    </div>
+                    <?php
+                    for ($i = 1; $i < count($img); $i++) {
+                        $img_name = $img[$i]['img_name'];
+                        $img_href = $img[$i]['href'];
+                        $image = base64_encode($img[$i]['img']);
+                        $title = $img[$i]['title'];
+                        if ($title != 'book') continue;
+                        echo
+                            "<div class='col-sm'>
+                            <div class='row item-img'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="examples hide clothing">
+                <?php
+                for ($i = 0; $i < count($img); $i++) {
+                    $img_name = $img[$i]['img_name'];
+                    $img_href = $img[$i]['href'];
+                    $image = base64_encode($img[$i]['img']);
+                    $title = $img[$i]['title'];
+                    if ($title == 'clothing') {
+                        echo "<div class='row'>
+                            <div class='row first-item'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                        break;
+                    }
+                }
+                ?>
                 <div class="row">
-                    <div class="row first-item">
-                        <img src="img/example_pic19.webp" alt="pic19" />
-                    </div>
-                    <div class="row item-name">
-                        <a href="https://negativeunderwear.com/">Negative Underwear</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic20.jpg" alt="pic20" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.3sixteen.com/">3sixteen</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic21.jpg" alt="pic21" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://rodengray.com/"> Roden Gray</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic22.jpg" alt="pic22" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.taylorstitch.com/">Taylor Stitch </a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic23.jpg" alt="pic23" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.greats.com/">Greats</a>
-                        </div>
-                    </div>
+                    <?php
+                    for ($i = 1; $i < count($img); $i++) {
+                        $img_name = $img[$i]['img_name'];
+                        $img_href = $img[$i]['href'];
+                        $image = base64_encode($img[$i]['img']);
+                        $title = $img[$i]['title'];
+                        if ($title != 'clothing') continue;
+                        echo
+                            "<div class='col-sm'>
+                            <div class='row item-img'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                    }
+                    ?>
                 </div>
             </div>
             <div class="examples hide jewelry">
+                <?php
+                for ($i = 0; $i < count($img); $i++) {
+                    $img_name = $img[$i]['img_name'];
+                    $img_href = $img[$i]['href'];
+                    $image = base64_encode($img[$i]['img']);
+                    $title = $img[$i]['title'];
+                    if ($title == 'jewelry') {
+                        echo "<div class='row'>
+                            <div class='row first-item'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                        break;
+                    }
+                }
+                ?>
                 <div class="row">
-                    <div class="row first-item">
-                        <img src="img/example_pic24.jpg" alt="pic24" />
-                    </div>
-                    <div class="row item-name">
-                        <a href="https://www.leifshop.com/">LEIF</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic25.jpg" alt="pic25" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.mooreaseal.com/">Moorea Seal</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic26.jpg" alt="pic26" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://grovemade.com/">Grovermade</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic27.jpg" alt="pic27" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.hardgraft.com/">hard graft</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic28.jpg" alt="pic28" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://superteamdeluxe.com/"> Super Team Deluxe</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic29.webp" alt="pic29" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.ilovebiko.com/">Biko</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic30.jpg" alt="pic30" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://coreymoranis.com/"> Corey Moranis</a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic31.jpg" alt="pic31" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://lilliputhats.com/">Liliput Hats </a>
-                        </div>
-                    </div>
-                    <div class="col-sm">
-                        <div class="row item-img">
-                            <img src="img/example_pic32.jpg" alt="pic32" />
-                        </div>
-                        <div class="row item-name">
-                            <a href="https://www.tesoro.design/">Tesoro Design </a>
-                        </div>
-                    </div>
+                    <?php
+                    for ($i = 1; $i < count($img); $i++) {
+                        $img_name = $img[$i]['img_name'];
+                        $img_href = $img[$i]['href'];
+                        $image = base64_encode($img[$i]['img']);
+                        $title = $img[$i]['title'];
+                        if ($title != 'jewelry') continue;
+                        echo
+                            "<div class='col-sm'>
+                            <div class='row item-img'>
+                                <img src='data:image/jpg;charset=utf8;base64,$image' /> 
+                            </div>
+                            <div class='row item-name'>
+                                <a href='$img_href'>$img_name</a>
+                            </div>
+                        </div>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
