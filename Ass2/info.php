@@ -79,7 +79,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <a href="./register.php">Đăng ký</a>;
                         </div>';
                             echo "<div class='col-sm-12'>
-                            <button onclick='window.location.href='login.php''>Bắt đầu ngay</button>
+                            <button onclick='window.location.href=`login.php`'>Bắt đầu ngay</button>
                         </div>";
                         } else {
                             echo '<div class="col-sm-12">
@@ -161,7 +161,55 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             </nav>
         </div>
         <div id="section1">
-            <button class="edit_contact">Quản lý trang Liên hệ </button>
+            <?php
+            $username = $_SESSION['username'];
+            $password = $_SESSION['password'];
+            $email = $_SESSION['email'];
+            $fullname = $_SESSION['fullname'];
+            $dob = $_SESSION['DOB'];
+            $sex = $_SESSION['sex'];
+            echo '<form id="adjustform" method="POST">';
+            echo "Username : <input type='text' id='display_name' value='"; echo "$username' readonly> <br><br>";
+            echo "Mật khẩu : <input type='text' id='display_password' value='"; echo "$password'> <br><br>";
+            echo "Email : <input type='text' id='display_email' value='"; echo "$email'> <br><br>";
+            echo "Họ và tên : <input type='text' id='display_fullname' value='"; echo "$fullname'> <br><br>";
+            echo "Ngày tháng năm sinh : <input type='date' id='display_dob' value='"; echo "$dob'> <br><br>";
+            if ($sex == "male") {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male' checked> Nữ: <input type='radio' id='female' name='gender' value='female'> <br><br>";
+            }
+            else if ($sex == "femal") {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male'> Nữ: <input type='radio' id='female' name='gender' value='female' checked> <br><br>";
+            }
+            else {
+                echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male'> Nữ: <input type='radio' id='female' name='gender' value='female'> <br><br>";
+            }
+            echo '<button type="submit">Cập Nhật</button>';
+            echo '</form>';
+            ?>
+
+        </div>
+        <div id="section2">
+            <?php
+            if ($_SESSION['role'] === 3) {
+                echo '
+                <h3>Quản lý trang web</h3>
+                <div class="row">
+                    <div class="col-sm">
+                        <button class="edit_product">Quản lý trang Sản phẩm</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_pricing">Quản lý trang Biểu giá</button>
+                    </div>
+                    <div class="col-sm">
+                        <button class="edit_contact">Quản lý trang Liên hệ</button>
+                    </div>
+                    <div class="col-sm">
+                        <button>Quản lý Thành viên</button>
+                    </div>
+                </div>
+            ';
+            }
+            ?>
         </div>
 
         <div id="footer">

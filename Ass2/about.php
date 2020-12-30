@@ -2,6 +2,7 @@
 <html lang="vi">
 <?php
 session_start();
+if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
 ?>
 
 <head>
@@ -56,7 +57,7 @@ session_start();
                             <a href="./register.php">Đăng ký</a>;
                         </div>';
                             echo "<div class='col-sm-12'>
-                            <button onclick='window.location.href='login.php''>Bắt đầu ngay</button>
+                            <button onclick='window.location.href=`login.php`'>Bắt đầu ngay</button>
                         </div>";
                         } else {
                             echo '<div class="col-sm-12">

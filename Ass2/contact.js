@@ -6,7 +6,6 @@ $(document).ready(function () {
         var cur = cookie[i].split('=');
         result[cur[0]] = cur[1];
     }
-    console.log("hihi", result)
     var canEdit = false
     if (('editmode' in result) && result['editmode']) {
         canEdit = true
@@ -16,7 +15,6 @@ $(document).ready(function () {
         url: './service/contact.php',
         dataType: 'json',
         success: function (data) {
-            console.log(data)
             var tmp = `<th scope="row" colspan="2" style="font-size: 30px" id="article">
             <span id="article_content">${data.article}</span>`
             if (canEdit) tmp += `<br/>
@@ -125,7 +123,6 @@ $(document).ready(function () {
             getall: true,
         },
         success: function (data) {
-            console.log(data)
             var posts = {}
             for (var post of data) {
                 if (post.postID == -1) posts[post.id] = { ...post, comments: [] }
@@ -139,7 +136,6 @@ $(document).ready(function () {
                     return b.order - a.order
                 })
             }
-            console.log(posts)
             var cookie = document.cookie
             cookie = cookie.split('; ');
             var result = {};
@@ -147,7 +143,6 @@ $(document).ready(function () {
                 var cur = cookie[i].split('=');
                 result[cur[0]] = cur[1];
             }
-            console.log(result)
             var username = "Khách"
             var userrole = "guess"
 
@@ -227,12 +222,10 @@ $(document).ready(function () {
 $(document).on('click', '.make_cmt', function () {
     var id = $(this).attr("id").substring(8)
     var cmtClass = ".comment_" + id
-    console.log(cmtClass)
     $(cmtClass).css('display', 'initial')
 })
 $(document).on('click', '.send_btn', function () {
     var postID = $(this).attr("id").substring(5)
-    console.log(postID)
     var cookie = document.cookie
     cookie = cookie.split('; ');
     var result = {};
@@ -242,7 +235,9 @@ $(document).on('click', '.send_btn', function () {
     }
     var content = '.cmt_content_' + postID
     if (!('userID' in result) || $(content).val() === "") return
-
+    if ($(content).val() === "") {
+        return
+    }
     $.ajax({
         type: 'POST',
         url: '/service/post.php',
@@ -260,7 +255,6 @@ $(document).on('click', '.send_btn', function () {
 })
 $(document).on('click', '.delete_post', function () {
     var id = $(this).attr("id").substring(11)
-    console.log(id)
     var result = confirm("Bạn có muốn xóa nội dung này?");
     if (result) {
         $.ajax({
@@ -279,7 +273,6 @@ $(document).on('click', '.edit_post', function () {
     document.getElementById(buttonDiv).disabled = true;
     var contentDiv = ".post_content_" + id
     var content = $(contentDiv).html()
-    console.log(content, contentDiv)
     var editDiv =
         `<span class='post_content post_content_${id} textarea_cmt'>` +
         `<textarea class='post_content_textarea_${id}'>${content}</textarea>` +
@@ -294,7 +287,7 @@ $(document).on('click', '.save', function () {
     var id = $(this).attr("id").substring(5)
     var contentDiv = ".post_content_textarea_" + id
     var content = $(contentDiv).val()
-
+    if (content === '') return
     $.ajax({
         type: 'PUT',
         url: '/service/post.php',
@@ -311,7 +304,6 @@ $(document).on('click', '.save', function () {
 })
 $(document).on('click', '.delete_cmt_btn', function () {
     var id = $(this).attr("id").substring(4)
-    console.log(id)
     var result_confirm = confirm("Bạn có muốn xóa nội dung này?");
     var cookie = document.cookie
     cookie = cookie.split('; ');
@@ -346,7 +338,6 @@ $(document).on('click', '.edit', function () {
     var fieldname = $(this).attr('id').substring(5)
     if (fieldname === 'article') {
         var oldContent = $('#article_content').html()
-        console.log($('#article_content').html())
         $('#article').replaceWith(
             `<th scope="row" colspan="2" style="font-size: 30px" id="article">
             <textarea id="article_content"> ${oldContent} </textarea>
@@ -433,7 +424,6 @@ $(document).on('click', '.edit', function () {
         )
     }
     else {
-        console.log(fieldname)
         var oldContent = $(`[id='${fieldname}_content']`).html()
         $(`[id='${fieldname}']`).replaceWith(
             `<li  id='${fieldname}'>
@@ -451,7 +441,6 @@ $(document).on('click', '.edit', function () {
 $(document).on('click', '.saveContact', function () {
     var fieldname = $(this).attr('id').substring(5)
     var newContent = $(`[id='${fieldname}_content']`).val()
-    console.log(newContent)
     $.ajax({
         type: 'PUT',
         url: './service/contact.php',
@@ -471,7 +460,6 @@ $(document).on('click', '#editmode', function () {
     document.cookie = "editmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 })
 $(document).on('click', '#newInfor', function () {
-    console.log("ùkdjfdk")
     $.ajax({
         type: 'PUT',
         url: './service/contact.php',

@@ -244,20 +244,52 @@
 	}
 }
 /*end header*/
-#section1 {
+#section1,
+#section2,
+#section3 {
 	padding: 100px 3%;
-}
-#section2 {
-	padding: 0% 3%;
-	padding-bottom: 50px;
+	padding-bottom: 0%;
 }
 
-button {
+#insert-form,
+#edit_product {
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 50%;
+	margin: auto;
+}
+#section2 {
+	display: none;
+}
+.row {
+	margin: 10px;
+}
+.btn {
 	color: #008060;
 	background-color: white;
 	border: none;
 }
-button:hover {
+.btn:hover {
 	background-color: #004d3a;
 	color: white;
+}
+@media only screen and (max-width: 1200px) {
+	.col-sm {
+		flex: 0 0 50%;
+	}
+	.title_list {
+		display: none;
+	}
+	#insert-form,
+	#edit_product {
+		width: 75%;
+	}
+}
+@media only screen and (max-width: 700px) {
+	.col-sm {
+		flex: 0 0 100%;
+	}
+	.title_list {
+		display: none;
+	}
 }

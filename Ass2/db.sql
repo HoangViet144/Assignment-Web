@@ -11,6 +11,9 @@ CREATE TABLE `users` (
    `pass` VARCHAR(40),
    `email` VARCHAR(40),
    `role` INT NOT NULL,
+   `fullname` VARCHAR(40),
+   `DOB` DATE,
+   `sex` VARCHAR(5),
    PRIMARY KEY(id),
    FOREIGN KEY (role) REFERENCES roles(roleid)
 );
@@ -26,8 +29,8 @@ CREATE TABLE `posts`(
 INSERT INTO roles VALUES(1,'Khach');
 INSERT INTO roles VALUES(2,'ThanhVien');
 INSERT INTO roles VALUES(3,'QuanTriVien');
-INSERT INTO users (name,pass,email,role) VALUES ('Thanh vien 1','1234', 'tv1@gmail.com', 2);
-INSERT INTO users (name,pass,email,role) VALUES ('Admin 1','1234', 'admin1@gmail.com', 3);
+INSERT INTO users (name,pass,email,role) VALUES ('Thanhvien1','1234', 'tv1@gmail.com', 2);
+INSERT INTO users (name,pass,email,role) VALUES ('Admin1','1234', 'admin1@gmail.com', 3);
 
 -- PRICING
 -- 
@@ -83,7 +86,7 @@ CREATE TABLE `contact`(
     `id` INT NOT NULL AUTO_INCREMENT,
     `fieldname` VARCHAR(100),
     `content` VARCHAR(1000),
-    PRIMARY KEY(id),
+    PRIMARY KEY(id)
 );
 INSERT INTO contact(fieldname, content) VALUES ('article','Gặp vấn đề thắc mắc với Shopify ?');
 INSERT INTO contact(fieldname, content) VALUES ('content','Câu trả lời cho vấn đề của bạn có thể được tìm thấy trong cộng đồng Shopify hoặc nhận được từ đội ngũ hỗ trợ');
@@ -93,4 +96,13 @@ INSERT INTO contact(fieldname, content) VALUES ('companyaddr','Lý Thường ki�
 INSERT INTO contact(fieldname, content) VALUES ('phone','190091989');
 INSERT INTO contact(fieldname, content) VALUES ('mail','info@shopify.com.vn');
 INSERT INTO contact(fieldname, content) VALUES ('web','www.shopify.com.vn');
+
+CREATE TABLE `examples`(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `img_name` VARCHAR(1000),
+    `img` longblob,
+    `href` VARCHAR(1000),
+    `title` VARCHAR(1000),
+    PRIMARY KEY(id)
+);
 

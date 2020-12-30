@@ -3,20 +3,38 @@
 <?php
 session_start();
 if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+if ($_SESSION['role'] == 1) {
+    header('Location: ./login.php');
+}
+if ($_SESSION['role'] == 2) {
+    header('Location: ./index.php');
+}
+include "config.php";
+$resultiter = mysqli_query($con, "SELECT * FROM examples");
+$img = array();
+while ($row = mysqli_fetch_assoc($resultiter)) {
+    array_push($img, $row);
+}
+mysqli_close($con);
 ?>
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Sell</title>
+    <title>Shopify</title>
     <link rel="stylesheet" href="css/bootstrap-4.5.3-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/example_admin.css" />
+    <!-- ICON FOOTER -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/sell.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
+    <script src="example_admin.js"></script>
 </head>
+<?php
+if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
+?>
 
 <body>
     <div id="container">
@@ -32,6 +50,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     </div>
                     <div class="row">
                         <?php
+
                         if ($_SESSION['role'] > 1) {
                             $username = $_SESSION['username'];
                             echo "<div class='col-sm-12'>
@@ -42,9 +61,22 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         </div>';
                         }
                         ?>
-                        <div class="col-sm-12">
-                            <a href="./pricing.php">Bảng giá</a>
-                        </div>
+                        <?php
+                        if ($_SESSION['role'] == 3) {
+
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                        } else {
+                            echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                            echo "<div class='col-sm-12'>
+                            <a href='./pricing.php'>Bảng giá</a>
+                        </div>";
+                        }
+
+                        ?>
                         <div class="col-sm-12">
                             <a href="./examples.php">Sản phẩm mẫu</a>
                         </div>
@@ -64,7 +96,9 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <a href="./service/auth.php?logout=true">Đăng xuất</a>
                         </div>';
                         }
+
                         ?>
+
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
@@ -92,9 +126,25 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <li class="nav-item">
                             <a class="nav-link" href="./about.php">Về chúng tôi</a>
                         </li>
+                        <!-- HANDLE PRICIE -->
                         <li class="nav-item">
-                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                            <?php
+                            if ($_SESSION['role'] == 3) {
+
+                                echo "<a class='nav-link' href='./pricing_admin.php'>Bảng giá</a>
+                            ";
+                            } else {
+                                echo "<a class='nav-link' href='./pricing.php'>Bảng giá</a>
+                            ";
+                            }
+
+                            ?>
                         </li>
+                        <!-- END HANDLE PRICE -->
+                        <!-- <li class="nav-item">
+
+                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="./examples.php">Sản phẩm</a>
                         </li>
@@ -120,178 +170,101 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 </div>
             </nav>
         </div>
-        <div class="row intro">
-            <div class="col-md-6 intro_text">
-                <h1 class="heading">
-                    <span class="hightlight">Bán hàng -</span><br />
-                    mọi nơi
-                </h1>
-                <p class="sub_head">Một trang web giúp bạn bán hàng bất cứ khi nào khách hàng online, hoặc bất cứ khi nào có kết nối giữa các bạn</p>
-                <div class="row option">
-                    <a href="" class="col-md-6 choice">
-                        <p class="head_highlight">Cửa hàng trực tuyến</p>
-                        <p>Buôn bán trực tuyến với các trang web thương mại</p>
-                    </a>
-                    <a href="" class="col-md-6 choice">
-                        <p class="head_highlight">Phần mềm bán hàng</p>
-                        <p>Bán hàng tại các điểm bán lẻ, quảng cáo và nhiều hơn nữa</p>
-                    </a>
-                    <a href="" class="col-md-6 choice">
-                        <p class="head_highlight">Mua chỉ với một nút bấm</p>
-                        <p>Thêm các trang thương mại điện tử vào bất kì web hay blog nào !</p>
-                    </a>
-                    <a href="" class="col-md-6 choice">
-                        <p class="head_highlight">Các trang bán hàng</p>
-                        <p>Bán hàng ở trên các trang social media, các trang bán hàng online,...</p>
-                    </a>
-                </div>
+        <div id="section1">
+            <h3>Thêm các tư liệu sản phẩm:</h3>
+            <div id="insert-form">
+                <form action="./service/example.php" method="POST" enctype="multipart/form-data">
+                    <div class='row'>
+                        <label class='col-sm-4'>Hình ảnh: </label><input class='col-sm-8' type="file" name="image" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Tên: </label><input class='col-sm-8' type="text" name="image_name" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Link: </label><input class='col-sm-8' type="text" name="image_link" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Chủ đề: </label><input class='col-sm-8' type="text" name="title" />
+                    </div>
+                    <div class='row'>
+                        <input class='col-sm' type="submit" />
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6 intro_image">
-                <img src="img/girl.png" alt="girl" class="girl" />
-                <img src="img/little_tree.png" class="tree" alt="tree" />
-                <img src="img/street.png" class="street" alt="street" />
+        </div>
+        <div id="section2">
+            <h3>Chỉnh sửa sản phẩm</h3>
+            <div id='edit_product'>
+                <form action="./service/example.php" method="POST" enctype="multipart/form-data">
+                    <div class='row'>
+                        <label class='col-sm-4' id='edit_id_label'>Id: </label><input class='col-sm-8' type="text" name="img_id" id="edit_id" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Hình ảnh: </label><input class='col-sm-8' type="file" name="image" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Tên: </label><input class='col-sm-8' type="text" name="image_name" id="edit_name" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Link: </label><input class='col-sm-8' type="text" name="image_link" id="edit_href" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Chủ đề: </label><input class='col-sm-8' type="text" name="title" id="edit_title" />
+                    </div>
+                    <div class='row'>
+                        <input class='col-sm' type="submit" />
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="row online_store">
-            <div class="col-md-6 online_store_text">
-                <div>
-                    <p>TỰ TRANG TRÍ CỬA HÀNG CỦA RIÊNG BẠN</p>
-                    <h2>Thiết kế logo theo cách của bạn</h2>
-                    <p class="marg">Mang sản phẩm của bạn đến với mọi người.</p>
+        <div id="section3">
+            <h3>Danh sách các hình ảnh sản phẩm</h3>
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" id='searchall' type="text" placeholder="Tìm kiếm" aria-label="Search">
+                </form>
+            </nav>
+
+            <div class='row title_list'>
+                <div class='col-sm'>
+                    <h4>Tên cửa hàng</h4>
                 </div>
-                <div class="store_hidden hidden">
-                    <img src="img/background_laptop.png" alt="background-laptop" class="background_laptop" />
-                    <video class="video" preload="auto" autoplay loop="loop" muted="muted">
-                        <source src="img/video.mp4" type="video/mp4" />
-                    </video>
+                <div class='col-sm'>
+                    <h4>Website</h4>
                 </div>
-                <div class="detail">
-                    <h3>Hơn 70 giao diện</h3>
-                    <p>Thiết kế thương hiệu của bạn trên những giao diện tuyệt đẹp</p>
+                <div class='col-sm'>
+                    <h4>Chủ đề</h4>
                 </div>
-                <div class="detail">
-                    <h3>Kéo thả dễ dàng</h3>
-                    <p>Thiết kế trang web của bạn mà không cần code.</p>
-                </div>
-                <div class="detail">
-                    <h3>Tự điều chỉnh mọi thứ</h3>
-                    <p>Mọi thứ thật dễ dàng thông qua trang web của chúng tôi.</p>
-                </div>
-                <div>
-                    <a href="">Tìm hiểu thêm về cửa hàng trực tuyến -></a>
+                <div class='col-sm'>
                 </div>
             </div>
-            <div class="col-md-6 online_store_image">
-                <img src="img/background_laptop.png" class="background_laptop" alt="background-laptop" />
-                <video class="video" preload="auto" autoplay loop="loop" muted="muted">
-                    <source src="img/video.mp4" type="video/mp4" />
-                </video>
+            <div id="product-list">
+                <?php
+                foreach ($img as $ele) {
+                    $img_id = $ele['id'];
+                    $img_name = $ele['img_name'];
+                    $img_href = $ele['href'];
+                    $image = base64_encode($ele['img']);
+                    $title = $ele['title'];
+                    echo
+                        "<div class='product' id='$img_id'><hr>
+                            <div class='row'>
+                                <div class='col-sm' id='name_$img_id'>$img_name</div>
+                                <div class='col-sm' id='href_$img_id'>$img_href</div>
+                                <div class='col-sm' id='title_$img_id'>$title</div>
+                                <div class='col-sm'>
+                                    <button id='$image' class='product_img btn'>Xem hình ảnh</button>
+                                    <button id='edit_$img_id' class='btn edit'>Chỉnh sửa</button>
+                                    <button id='del_$img_id' class='btn del'>xóa</button>
+                                </div>
+                            </div>
+                        </div>";
+                }
+                ?>
             </div>
         </div>
 
-        <div class="row point_of_sale">
-            <div class="col-md-6 point_of_sale_text">
-                <div>
-                    <p>PHẦN MỀM BÁN HÀNG</p>
-                    <h2>Trải nghiệm tuyệt vời</h2>
-                    <p>Nâng cao khả năng kết nối</p>
-                </div>
-                <div class="point_hidden hidden">
-                    <img src="img/sale_girl.png" class="sale_girl" alt="sale-girl" />
-                    <img src="img/device.png" class="device" alt="device" />
-                    <img src="img/phone.png" class="phone" alt="phone" />
-                </div>
-                <div class="detail">
-                    <h3>Một cửa hàng tốt hơn</h3>
-                    <p>Cho khách hàng cảm giác thoải mái và tiện lợi hơn.</p>
-                </div>
-                <div class="detail">
-                    <h3>Dễ sử dụng cả phần cứng lẫn phần mềm</h3>
-                    <p>Đơn giản hóa mọi thứ.</p>
-                </div>
-                <div class="detail">
-                    <h3>Mọi thứ thật đơn giản.</h3>
-                    <p>Chỉ cần một công cụ để quản lý tất cả sản phẩm và khách hàng một cách tiện lợi.</p>
-                </div>
-                <div>
-                    <a href="">Tìm hiểu thêm về phần mềm bán hàng -></a>
-                </div>
-            </div>
-            <div class="col-md-6 point_of_sale_image">
-                <img src="img/sale_girl.png" class="sale_girl" alt="sale-girl" />
-                <img src="img/device.png" class="device" alt="device" />
-                <img src="img/phone.png" class="phone" alt="phone" />
-            </div>
-        </div>
-        <div class="row buy">
-            <div class="col-md-6 buy_text">
-                <div>
-                    <p>MUA BÁN LINH HOẠT</p>
-                    <h2>Thương mại hóa khắp mọi nơi</h2>
-                    <p>Biến bất cứ trang web hay blog trở thành một cửa hàng trực tuyến</p>
-                </div>
-                <div class="buy_image_hidden hidden">
-                    <img src="img/bottle.png" class="bottle" alt="bottle" />
-                    <img src="img/buy.PNG" class="buy_pic" alt="buy" />
-                    <img src="img/code.png" class="code" alt="code" />
-                </div>
-                <div class="detail">
-                    <h3>Sản phẩm</h3>
-                    <p>Thêm sản phẩm bạn muốn ở bất cứ đâu, kể cả Squarespace và WordPress.</p>
-                </div>
-                <div class="detail">
-                    <h3>An toàn mua sắm</h3>
-                    <p>Thêm trải nghiệm thanh toán an toàn trên điện thoại di động.</p>
-                </div>
-                <div class="detail">
-                    <h3>Tự thiết kế các nút bấm đơn giản</h3>
-                    <p>Tạo một cửa hàng tuyệt đẹp với các blog hoặc trang web có sẵn.</p>
-                </div>
-                <div>
-                    <a href="">Tìm hiểu thêm về trang mua sắm -></a>
-                </div>
-            </div>
-            <div class="col-md-6 buy_image">
-                <img src="img/bottle.png" class="bottle" alt="bottle" />
-                <img src="img/buy.PNG" class="buy_pic" alt="buy" />
-                <img src="img/code.png" class="code" alt="code" />
-            </div>
-        </div>
-        <div class="row channel">
-            <div class="col-md-6 channel_text">
-                <div>
-                    <p>CÁC TRANG BÁN HÀNG</p>
-                    <h2>Tiếp cận đến nhiều người hơn</h2>
-                    <p>Đưa sản phẩm của bạn ra cộng đồng nhanh gọn.</p>
-                </div>
-                <div class="channel_image_hidden hidden">
-                    <img src="img/chat.PNG" class="chat" alt="chat" />
-                </div>
-                <div class="detail">
-                    <h3>Social media</h3>
-                    <p>Phát triển nhanh chóng thông qua các kênh truyền thông như Instagram hay Facebook.</p>
-                </div>
-                <div class="detail">
-                    <h3>"Khu chợ" trực tuyến</h3>
-                    <p>Mở rộng doanh nghiệp của bạn khi truy cập vào mạng lưới khổng lồ.</p>
-                </div>
-                <div>
-                    <a href="">Tìm hiểu về các trang bán hàng -></a>
-                </div>
-            </div>
-            <div class="col-md-6 channel_image">
-                <img src="img/chat.PNG" class="chat" alt="chat" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="start_sell">
-                <h2>Hãy bắt đầu bán hàng với chúng tôi ngay hôm nay</h2>
-                <p>Trải nghiệm hoàn toàn miễn phí, tất cả bạn cần làm là nhấn, chạy và phát triển doanh nghiệp của bạn.</p>
-                <button onclick="window.location.href='./login.php'">Bất đầu ngay</button>
-            </div>
-        </div>
-        <div class="row end"></div>
         <div id="footer">
             <div class="container-fluid my-footer" style="background-color: #002e25">
                 <div id="my-footer-top" style="border-bottom: 1px solid rgba(210, 213, 217, 0.1)">
