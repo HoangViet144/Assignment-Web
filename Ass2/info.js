@@ -21,4 +21,30 @@ $(document).ready(function () {
         document.cookie = 'editmode=true' + ";" + expires + ";path=/";
         window.location.href = 'contact.php'
     })
+    $('#adjustform').submit(function (e) {
+        if ($("#display_password").val().length == 0 || $("#display_email").val().length == 0) {
+            alert('mật khẩu và email không được rỗng')
+            return
+        }
+        e.preventDefault()
+        $.ajax({
+            type: 'POST',
+            url: '/service/auth.php',
+            dataType: 'json',
+            data: {
+                adjust: true,
+                username: $("#display_name").val(),
+                password: $("#display_password").val(),
+                email: $("#display_email").val()
+            },
+            success: function (data) {
+                if (data == "") {
+                    alert("Update successfully!");
+                }
+                else {
+                   if (data == "Email exist") alert("Email exist");
+                }
+            },
+        })
+    })
 })

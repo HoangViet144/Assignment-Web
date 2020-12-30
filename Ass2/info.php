@@ -161,7 +161,18 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             </nav>
         </div>
         <div id="section1">
-            <button class="edit_contact">Quản lý trang Liên hệ </button>
+        <?php
+            $username = $_SESSION['username'];
+            $password = $_SESSION['password'];
+            $email = $_SESSION['email'];
+            echo '<form id="adjustform" method="POST">';
+            echo "Tên đăng nhập : <input type='text' id='display_name' value='"; echo "$username' readonly> <br><br>";
+            echo "Mật khẩu : <input type='text' id='display_password' value='"; echo "$password'> <br><br>";
+            echo "Email : <input type='text' id='display_email' value='"; echo "$email'> <br><br>";
+            echo '<button type="submit">Cập Nhật</button>';
+            echo '</form>';
+        ?>
+
         </div>
 
         <div id="footer">

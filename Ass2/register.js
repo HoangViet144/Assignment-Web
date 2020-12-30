@@ -16,7 +16,17 @@ $(document).ready(function () {
                 email: $("#email").val()
             },
             success: function (data) {
-                if (data == "") window.location.href = 'login.php';
+                if (data == "") {
+                    alert("Register successfully!");
+                    window.location.href = 'login.php';
+                }
+                else {
+                    if (data == "No space in username!") alert("No space in username!");
+                    else if (data == "No space in password!") alert("No space in password!");
+                    else if (data == "No space in email!") alert("No space in email!");
+                    else if (data == "Email exist") alert("Email exist");
+                    else alert("Username exist");
+                }
             },
         })
     })
