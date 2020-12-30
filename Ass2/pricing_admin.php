@@ -9,46 +9,92 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
 ?>
 
 <head>
-    <!-- <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin Editing</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="ajax/ajax.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
- -->
-
-
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <!-- <script src="ajax/ajax.js"></script> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Data</title>
+    <title>Manage Product</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="pricing_admin.js"></script>
+    <script src="index.js"></script>
+
+
+
 </head>
 
 <body>
+    <!-- <div id="background" onclick="closeNav()"></div>
+    <div id="header">
+        <div id="mySidebar" class="sidebar">
+            <div id="sidebarContent">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                        <a class="company-name" href="./index.html">shopify</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a id="view" href="./pricing.php">Bảng giá</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./examples.html">Sản phẩm mẫu</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./login.html">Đăng nhập</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./register.html">Đăng ký</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <button onclick="window.location.href='login.html'">Bắt đầu ngay</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="./about.html">Về chúng tôi</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="./contact.html">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-navbar navbar navbar-expand-md navbar-light">
+            <div class="navbar-brand">
+                <img src="img/shopify-seeklogo.com.svg" class="logo" alt="Logo" />
+                <a class="nav-link company-name" href="./index.html">shopify</a>
+            </div>
+
+            <button class="navbar-toggler" type="button" onclick="openNav()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="header-menu">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">Về chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="myview">Bảng giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link last-item" href="./login.html">Bắt đầu ngay</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div> -->
+    <!-- The end of the Header Part-->
     <div class="container">
         <p id="success"></p>
         <div class="table-wrapper">
@@ -56,11 +102,11 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                 <div class="row">
 
                     <div class="col-xs-6 col-md-6">
-                        <h2>Manage <b>Users</b></h2>
+                        <h2>Quản lý <b>sản phẩm</b></h2>
                     </div>
                     <div class="col-xs-6 col-md-6">
-                        <a href="#addEmployeeModal" class="btn btn-success col-xs-2 col-md-3" data-toggle="modal" style='width:10em;'> <span>Add New User</span></a>
-                        <a href="JavaScript:void(0);" class="btn btn-danger col-xs-2 col-md-3" id="delete_multiple" style='width:10em;'><span>Delete</span></a>
+                        <a href="#addEmployeeModal" class="btn btn-success col-xs-2 col-md-3" data-toggle="modal" style='width:10em;'> <span>Thêm mới</span></a>
+                        <a href="JavaScript:void(0);" class="btn btn-danger col-xs-2 col-md-3" id="delete_multiple" style='width:10em;'><span>Xóa</span></a>
 
                     </div><br>
                 </div>
@@ -73,8 +119,8 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th>SL NO</th>
-                            <th>NAME</th>
+                            <th>STT</th>
+                            <th>Tên</th>
 
                         </tr>
                     </thead>
@@ -96,8 +142,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                                 <td><?php echo $row["name"]; ?></td>
                                 <td>
                                     <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                        <i data-toggle="tooltip" data-id="<?php echo $row["name"]; ?>" data-name="<?php echo $row["name"]; ?>" title="Edit">Sửa</i>
-                                        <!-- <i data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-name="<?php echo $row["name"]; ?>" title="Sửa">Sửa</i> -->
+                                        <i class="update" data-toggle="tooltip" data-id="<?php echo $row["name"]; ?>" data-name="<?php echo $row["name"]; ?>" title="Chỉnh sửa">Sửa</i>
 
                                     </a>
                                     <a href="#deleteEmployeeModal" class="delete" data-id="<?php echo $row["name"]; ?>" data-toggle="modal">
@@ -126,7 +171,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <div class="modal-body">
 
                             <div class="form-group">
-                                <label>NAME</label>
+                                <label>Name</label>
                                 <input type="text" id="name" name="name" class="form-control" required>
                             </div>
                             <div class="form-group">
