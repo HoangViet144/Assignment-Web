@@ -194,7 +194,28 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
         </div>
         <div id="section2">
             <h3>Chỉnh sửa sản phẩm</h3>
-            <div id='edit_product'></div>
+            <div id='edit_product'>
+                <form action="./service/example.php" method="POST" enctype="multipart/form-data">
+                    <div class='row'>
+                        <label class='col-sm-4' id='edit_id_label'>Id: </label><input class='col-sm-8' type="text" name="img_id" id="edit_id" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Hình ảnh: </label><input class='col-sm-8' type="file" name="image" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Tên: </label><input class='col-sm-8' type="text" name="image_name" id="edit_name" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Link: </label><input class='col-sm-8' type="text" name="image_link" id="edit_href" />
+                    </div>
+                    <div class='row'>
+                        <label class='col-sm-4'>Chủ đề: </label><input class='col-sm-8' type="text" name="title" id="edit_title" />
+                    </div>
+                    <div class='row'>
+                        <input class='col-sm' type="submit" />
+                    </div>
+                </form>
+            </div>
         </div>
 
         <div id="section3">
@@ -222,9 +243,9 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     $title = $ele['title'];
                     echo
                         "<div class='row'>
-                            <div class='col-sm'>$img_name</div>
-                            <div class='col-sm'>$img_href</div>
-                            <div class='col-sm'>$title</div>
+                            <div class='col-sm' id='name_$img_id'>$img_name</div>
+                            <div class='col-sm' id='href_$img_id'>$img_href</div>
+                            <div class='col-sm' id='title_$img_id'>$title</div>
                             <div class='col-sm'>
                                 <button id='$image' class='product_img btn'>Xem hình ảnh</button>
                                 <button id='edit_$img_id' class='btn edit'>Chỉnh sửa</button>

@@ -251,11 +251,15 @@
 	padding-bottom: 0%;
 }
 
-#insert-form {
+#insert-form,
+#edit_product {
 	border: 1px solid black;
 	border-radius: 10px;
 	width: 500px;
 	margin: auto;
+}
+#section2 {
+	display: none;
 }
 .row {
 	margin: 10px;

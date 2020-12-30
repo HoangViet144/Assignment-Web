@@ -19,5 +19,19 @@ $(document).on('click', '.del', function () {
             }
         })
     }
-
+})
+$(document).on('click', '.edit', function () {
+    console.log('clic')
+    var id = $(this).attr("id").substring(5)
+    $('#section2').css('display', 'inherit')
+    $('#edit_id').val(id)
+    console.log($('#name_' + id).text())
+    $('#edit_name').val($('#name_' + id).text())
+    $('#edit_href').val($('#href_' + id).text())
+    $('#edit_title').val($('#title_' + id).text())
+})
+$(document).ready(function () {
+    $('#section2').css('display', 'none')
+    $('#edit_id').css('display', 'none')
+    $('#edit_id_label').css('display', 'none')
 })
