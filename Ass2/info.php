@@ -177,7 +177,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
             if ($sex == "male") {
                 echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male' checked> Nữ: <input type='radio' id='female' name='gender' value='female'> <br><br>";
             }
-            if ($sex == "female") {
+            else if ($sex == "femal") {
                 echo "Giới Tính : Nam: <input type='radio' id='male' name='gender' value='male'> Nữ: <input type='radio' id='female' name='gender' value='female' checked> <br><br>";
             }
             else {
