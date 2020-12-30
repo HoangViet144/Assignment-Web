@@ -8,6 +8,7 @@ if (isset($_POST['login'])) {
     if (!isset($_POST['username']) || !isset($_POST['password'])) {
         $result = "Wrong password, username.";
         echo json_encode($result);
+        return;
     }
 
     $username = $_POST['username'];
@@ -46,19 +47,19 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $check_space = FALSE;
 
-    for ($x = 0 ; $x < strlen($username);$x++) {
+    for ($x = 0; $x < strlen($username); $x++) {
         if ($username[$x] == ' ') {
             echo json_encode("No space in username!");
             $check_space = TRUE;
         }
     }
-    for ($x = 0 ; $x < strlen($password);$x++) {
+    for ($x = 0; $x < strlen($password); $x++) {
         if ($password[$x] == ' ') {
             echo json_encode("No space in password!");
             $check_space = TRUE;
         }
     }
-    for ($x = 0 ; $x < strlen($email);$x++) {
+    for ($x = 0; $x < strlen($email); $x++) {
         if ($email[$x] == ' ') {
             echo json_encode("No space in email!");
             $check_space = TRUE;
@@ -74,12 +75,9 @@ if (isset($_POST['register'])) {
         $result1 = mysqli_fetch_row($result1);
         if ($result) {
             echo json_encode("Username exist");
-        }
-        
-        else if ($result1) {
+        } else if ($result1) {
             echo json_encode("Email exist");
-        }
-        else {
+        } else {
             $query = "INSERT into users(name, pass, email, role) values('$username','$password','$email','2')";
             $result = mysqli_query($con, $query);
             if ($result) {
@@ -97,7 +95,7 @@ if (isset($_POST['register'])) {
 if (isset($_POST['adjust'])) {
     include "../config.php";
     $result = "";
-    
+
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
@@ -105,15 +103,15 @@ if (isset($_POST['adjust'])) {
     $dob = strtotime($_POST['dob']);
     $sex = $_POST['sex'];
     $check_space = FALSE;
-    $DOB = date('Y-m-d',$dob);
+    $DOB = date('Y-m-d', $dob);
 
-    for ($x = 0 ; $x < strlen($password);$x++) {
+    for ($x = 0; $x < strlen($password); $x++) {
         if ($password[$x] == ' ') {
             echo json_encode("No space in password!");
             $check_space = TRUE;
         }
     }
-    for ($x = 0 ; $x < strlen($email);$x++) {
+    for ($x = 0; $x < strlen($email); $x++) {
         if ($email[$x] == ' ') {
             echo json_encode("No space in email!");
             $check_space = TRUE;
@@ -125,8 +123,7 @@ if (isset($_POST['adjust'])) {
         $result = mysqli_fetch_row($result);
         if ($result) {
             echo json_encode("Email exist");
-        }
-        else {
+        } else {
             $query = "UPDATE users SET `email` = '$email', `pass` = '$password',`fullname` = '$fullname',`DOB` = '$DOB',`sex` = '$sex' WHERE `name` = '$username';";
             $result = mysqli_query($con, $query);
             if ($result) {
