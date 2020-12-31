@@ -36,11 +36,11 @@ $(document).ready(function () {
             alert('Mật khẩu phải nằm trong khoảng 4-35')
             return
         }
-        if ($('#display_fullname').val().length >35) {
+        if ($('#display_fullname').val().length > 35) {
             alert('Họ tên phải nằm trong khoảng 0-35')
         }
         var date_time = document.getElementById("display_dob").value;
-        var sex= null;
+        var sex = null;
         if (document.getElementById("male").checked == true) {
             sex = document.getElementById("male").value;
         }

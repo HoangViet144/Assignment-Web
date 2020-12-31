@@ -26,7 +26,6 @@ if (isset($_POST['login'])) {
         $_SESSION['DOB'] = $result[4];
         $_SESSION['sex'] = $result[5];
 
-
         setcookie('username', $_SESSION['username'], time() + (86400), "/");
         setcookie('role', $_SESSION['role'], time() + (86400), "/");
         setcookie('userID', $result[1], time() + (86400), "/");
@@ -127,6 +126,12 @@ if (isset($_POST['adjust'])) {
             $query = "UPDATE users SET `email` = '$email', `pass` = '$password',`fullname` = '$fullname',`DOB` = '$DOB',`sex` = '$sex' WHERE `name` = '$username';";
             $result = mysqli_query($con, $query);
             if ($result) {
+                $_SESSION['username'] = $username;
+                $_SESSION['password'] = $password;
+                $_SESSION['email'] = $email;
+                $_SESSION['fullname'] = $fullname;
+                $_SESSION['DOB'] = $DOB;
+                $_SESSION['sex'] = $sex;
                 echo json_encode("");
             } else {
                 echo json_encode("Wrong");
