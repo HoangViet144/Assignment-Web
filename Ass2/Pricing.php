@@ -3,6 +3,7 @@ include 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
+
 <?php
 session_start();
 if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
@@ -43,21 +44,56 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
-                        <a id="view" href="./pricing.php">Bảng giá</a>
-                    </div>
+                    <?php
+
+                    if ($_SESSION['role'] > 1) {
+                        $username = $_SESSION['username'];
+                        echo "<div class='col-sm-12'>
+                            <a>Xin chào, $username</a>
+                        </div>";
+                        echo '<div class="col-sm-12">
+                            <a href="./pricing.php">Thông tin cá nhân</a>
+                        </div>';
+                    }
+                    ?>
+                    <?php
+                    if ($_SESSION['role'] == 3) {
+
+                        echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                    } else {
+                        echo "<div class='col-sm-12'>
+                                    <a href='./pricing_admin.php'>Bảng giá</a>
+                                </div>";
+                        echo "<div class='col-sm-12'>
+                            <a href='./pricing.php'>Bảng giá</a>
+                        </div>";
+                    }
+
+                    ?>
                     <div class="col-sm-12">
                         <a href="./examples.php">Sản phẩm mẫu</a>
                     </div>
-                    <div class="col-sm-12">
-                        <a href="./login.php">Đăng nhập</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="./register.php">Đăng ký</a>
-                    </div>
-                    <div class="col-sm-12">
-                        <button onclick="window.location.href='login.php'">Bắt đầu ngay</button>
-                    </div>
+                    <?php
+                    if ($_SESSION['role'] == 1) {
+                        echo '<div class="col-sm-12">
+                            <a href="./login.php">Đăng nhập</a>
+                        </div>';
+                        echo '<div class="col-sm-12">
+                            <a href="./register.php">Đăng ký</a>
+                        </div>';
+                        echo "<div class='col-sm-12'>
+                            <button onclick='window.location.href=`login.php`'>Bắt đầu ngay</button>
+                        </div>";
+                    } else {
+                        echo '<div class="col-sm-12">
+                            <a href="./service/auth.php?logout=true">Đăng xuất</a>
+                        </div>';
+                    }
+
+                    ?>
+
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
@@ -85,20 +121,50 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                     <li class="nav-item">
                         <a class="nav-link" href="./about.php">Về chúng tôi</a>
                     </li>
+                    <!-- HANDLE PRICIE -->
                     <li class="nav-item">
-                        <a class="nav-link" id="myview">Bảng giá</a>
+                        <?php
+                        if ($_SESSION['role'] == 3) {
+
+                            echo "<a class='nav-link' href='./pricing_admin.php'>Bảng giá</a>
+                            ";
+                        } else {
+                            echo "<a class='nav-link' href='./pricing.php'>Bảng giá</a>
+                            ";
+                        }
+
+                        ?>
                     </li>
+                    <!-- END HANDLE PRICE -->
+                    <!-- <li class="nav-item">
+
+                            <a class="nav-link" href="./pricing.php">Bảng giá</a>
+                        </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php">Đăng nhập</a>
+                        <a class="nav-link" href="./examples.php">Sản phẩm</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
-                    </li>
+                    <?php
+                    if ($_SESSION['role'] == 1) {
+                        echo '<li class="nav-item">
+                            <a class="nav-link" href="./login.php">Đăng nhập</a>
+                        </li>';
+                        echo '<li class="nav-item">
+                            <a class="nav-link last-item" href="./login.php">Bắt đầu ngay</a>
+                        </li>';
+                    } else {
+                        $username = $_SESSION['username'];
+                        echo '<li class="nav-item">
+                            <a class="nav-link" href="./service/auth.php?logout=true">Đăng xuất</a>
+                        </li>';
+                        echo "<li class='nav-item'>
+                            <a class='nav-link last-item' href='./info.php' >Xin chào, $username</a>
+                        </li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </nav>
     </div>
-    <!-- The end of the Header Part-->
     <!-- Starting Intro Part -->
     <div id="body-content">
         X
