@@ -17,12 +17,12 @@ $(document).ready(function () {
                     // 		tr_str = tr_str +"<td>Chi phí mỗi tháng</td>";
                     for (var i = 0; i < len; i++) {
 
-                        var t = response[i][key];
+                        var t = +response[i][key];
 
-                        if (t == "true")
+                        if (t === 1)
                             tr_str = tr_str +
                                 "<td><span class=\"my-ok-icon\">&#10003;</span></td>";
-                        else if (t == 'false')
+                        else if (t === 0)
                             tr_str = tr_str +
                                 "<td>-</td>";
                         else {
