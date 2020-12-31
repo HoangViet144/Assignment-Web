@@ -27,6 +27,9 @@ $(document).ready(function () {
     $(".edit_product").click(function () {
         window.location.href = 'example_admin.php'
     })
+    $(".edit_member").click(function () {
+        window.location.href = 'management.php'
+    })
     $('#adjustform').submit(function (e) {
         if ($("#display_password").val().length == 0 || $("#display_email").val().length == 0) {
             alert('mật khẩu và email không được rỗng')

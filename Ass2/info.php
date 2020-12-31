@@ -208,7 +208,7 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                         <button class="edit_contact">Quản lý trang Liên hệ</button>
                     </div>
                     <div class="col-sm">
-                        <button>Quản lý Thành viên</button>
+                        <button class="edit_member">Quản lý Thành viên</button>
                     </div>
                 </div>
             ';

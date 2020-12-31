@@ -176,15 +176,30 @@ if (!isset($_SESSION['role'])) $_SESSION['role'] = 1;
                             <td><?php echo $row["id"]; ?></td>
                             <td><?php echo $row["name"]; ?></td>
                             <td><?php echo $row["email"]; ?></td>
-                            <td><?php echo $row["role"]; ?></td>
+                            <td><?php echo gettype($row["role"]); ?></td>
                             <td>
-                                <a href='<?php if ($row["role"] == '3') echo '';
-                                            else echo '#editEmployeeModal' ?>' class='edit' data-toggle='modal'>
-                                    <!-- <a href='#editEmployeeModal' class='edit' data-toggle='modal'> -->
-                                    <i class="update" data-toggle="tooltip" data-id="<?php echo $row["id"]; ?>" data-name="<?php echo $row["name"]; ?>" data-email="<?php echo $row["email"]; ?>" title="Chỉnh sửa" data-role="<?php echo $row["role"]; ?>">Sửa</i>
-                                </a>
-                                <a href='<?php if ($row["role"] == '3') echo '';
-                                            else echo '#deleteEmployeeModal' ?>' id='mydelete' class="delete" data-id="<?php echo $row["id"]; ?>" data-toggle="modal"><i data-toggle="tooltip" title="Xóa"> Xóa</i></a>
+                                <?php
+                                $a = $row['id'];
+                                $b = $row['name'];
+                                $c = $row['email'];
+                                $d = intval($row['role']);
+                                if ($d !== 3) {
+                                    echo "<a href='#editEmployeeModal' class='edit' data-toggle='modal'>
+                                    <i class='update' data-toggle='tooltip' 
+                                    data-id='$a' 
+                                    data-name='$b' 
+                                    data-email='$c' title='Chỉnh sửa' 
+                                    data-role='$d'>Sửa<i>
+                                </a>";
+
+                                    echo "<a href='#deleteEmployeeModal' id='mydelete' 
+                                    class='delete' data-id='$a>' data-toggle='modal'>
+                            <i data-toggle='tooltip' title='Xóa'> Xóa</i></a>
+                                    ";
+                                }
+                                ?>
+
+
                             </td>
                         </tr>
                     <?php
