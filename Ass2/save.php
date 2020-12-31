@@ -22,6 +22,8 @@ if (count($_POST) > 0) {
 if (count($_POST) > 0) {
     if ($_POST['type'] == 3) {
         $id = $_POST['id'];
+        $sql = "DELETE FROM `posts` WHERE userid='$id' ";
+        mysqli_query($con, $sql);
         $sql = "DELETE FROM `users` WHERE id='$id' ";
         if (mysqli_query($con, $sql)) {
             echo $id;
